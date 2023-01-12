@@ -1,0 +1,270 @@
+%\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
+
+\input{../Macros/main}
+\subtitle{\vspace{2.1em}Lecture 1: Introduction}
+
+\begin{document}
+
+ \begin{frame}[plain]
+  \titlepage
+ \end{frame}
+ 
+ \section{Course Mechanics}
+  \begin{frame}{Course Mechanics}
+   \begin{itemize}[<+->]
+    \setlength{\itemsep}{1em}
+    \item Course website
+    \begin{itemize}[<.->]
+     \item \href{https://ece.uwaterloo.ca/~smzahedi/crs/ece750}{\url{https://ece.uwaterloo.ca/~smzahedi/crs/ece750/}}
+     \item All course information, lecture notes, assignments, etc.  
+    \end{itemize}   
+    \item Office hours
+    \begin{itemize}[<.->]
+     \item Book appointment online
+     \item Or catch me after class, or send me email to setup meeting
+    \end{itemize}
+    \item Prerequisites 
+    \begin{itemize}[<.->]
+    	 \item None
+     \item Helpful knowledge: algorithms, probability, comp. complexity, and optimization
+    \end{itemize} 
+    \item Anti-requisites 
+    \begin{itemize}[<.->]
+     \item ECON.412 (Topics in Game Theory), CO.456 (Introduction to Game Theory), CS.886 (Multi-agent Systems), and MSCI.724 (Game Theory and Recent App)
+    \end{itemize} 
+   \end{itemize}
+   \only<1->{
+    \begin{textblock*}{0.5in}(12cm,1.75cm) % {block width} (coords)
+     \qrcode[height=0.5in]{https://ece.uwaterloo.ca/\string~smzahedi/crs/ece750}
+    \end{textblock*}
+   }
+  \end{frame}
+ 
+ \section{Course Outline}
+  \begin{frame}{Tentative Topics}
+   \begin{itemize}[<+->]
+    \setlength{\itemsep}{1em}
+    \item\alert<.>{Introduction to multi-agent systems}
+    \begin{itemize}[<.->]
+     \item Overview of game theory and mechanism design, rationality and self-interest, utility theorem, risk attitudes
+    \end{itemize}
+    \item\alert<.>{Games in normal form}
+    \begin{itemize}[<.->]
+     \item Pure and mixed-strategy Nash equilibrium, iterative elimination of dominated strategies, price of anarchy, correlated equilibrium, computing solution concepts of normal-form games
+    \end{itemize}
+    \item\alert<.>{Games in extensive form}
+    \begin{itemize}[<.->]
+     \item Perfect and imperfect-information games, finite and infinite-horizon games, subgame-perfect equilibrium, backward induction, one-shot deviation principle
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+ 
+  \begin{frame}{Tentative Topics (cont.)}
+   \begin{itemize}[<+->]
+    \setlength{\itemsep}{1em}
+    \item\alert<.>{Beyond normal and extensive-form games}
+    \begin{itemize}[<.->]
+     \item Repeated games, stochastic games, Bayesian games, congestion games, trigger strategies, folk theorems, Bayes-Nash equilibrium, auctions
+    \end{itemize}
+    \item\alert<.>{Mechanism design}
+    \begin{itemize}[<.->]
+     \item Optimal auctions, revenue-equivalence theorem, revelation principle, incentive compatibility, VCG mechanisms
+    \end{itemize}
+    \item\alert<.>{Learning in multi-agent systems}
+    \begin{itemize}[<.->]
+     \item Multi-agent reinforcement learning, fictitious play, Bayesian learning, regret-minimization learning
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+ 
+  \begin{frame}{Textbook and References}
+   \footnotesize
+   \begin{itemize}
+    \setlength{\itemsep}{1em}
+    \item Y. Shoham and K. Leyton-Brown, \textbf{Multi-agent Systems: Algorithmic, Game-theoretic, and Logical Foundations} \href{http://www.masfoundations.org/mas.pdf}{(available online)}
+    \item	N. Nisan, et al. \textbf{Algorithmic Game Theory} \href{https://www.cs.cmu.edu/~sandholm/cs15-892F13/algorithmic-game-theory.pdf}{(available online)}
+    \item T. Roughgarden, \textbf{Twenty Lectures on Algorithmic Game Theory} \href{https://timroughgarden.org/notes.html}{(notes available online)}
+    \item D. Fudenberg and D. Levine, \textbf{The Theory of Learning in Games}
+    \item D. Fudenberg and J. Tirole, \textbf{Game Theory}
+    \item M. J. Osborne and A. Rubinstein, \textbf{A Course in Game Theory} \href{https://books.osborne.economics.utoronto.ca/}{(available online)}
+   \end{itemize}
+  \end{frame}
+ 
+  \begin{frame}{Course Requirements}
+   \begin{itemize}
+    \item<+-> Graduate offering
+    \begin{itemize}[<+-| alert@+>]
+     \item Quizzes 5\%
+     \item Assignments 20\%
+     \item Research project 45\%
+     \item Final exam 30\%
+    \end{itemize}
+    \vspace{1.4em}
+    \item<+-> Undergraduate offering
+    \begin{itemize}[<+-| alert@+>]
+     \item Quizzes 5\%
+     \item Assignments 20\%
+     \item Survey project 25\%
+     \item Final exam 50\%
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+ 
+  \begin{frame}{Survey Project (Undergraduate Offering)}
+   \begin{itemize}
+   \setlength{\itemsep}{1em}
+    \item Goal is to review existing literature in sub-area of multi-agent systems and possibly explore open research questions in that sub-area
+    \item Two milestones: proposal (15\% - about three weeks into the term) and final written report (85\% - end of the term)
+   \end{itemize}
+  \end{frame}
+ 
+  \begin{frame}{Research Project (Graduate Offering)}
+   \begin{itemize}
+   \setlength{\itemsep}{1em}
+   \item Goal is to try to do something novel, rather than merely surveying existing work
+   \item Only real constraint is that it has to have something to do with covered material
+   \item Projects may be theoretical, experimental (based on simulations), experimental (based on real-world data), a useful software artifact, or any combination thereof
+   \item Three milestones: proposal (10\%), oral progress report (10\%), and final written report (80\%)
+   \item Creativity is encouraged
+   \end{itemize}
+  \end{frame}
+ 
+ \section{Overview of Game Theory and Mechanism Design}
+ 
+  \begin{frame}{Questions and Problems in (Computational) Game Theory}
+   \begin{itemizes}
+    \item<+-> How should we represent games (i.e., strategic settings)?
+    \begin{itemize}
+     \item<.-> Game-theoretic representations not always concise enough
+    \end{itemize} 
+	\item<+-> What does it mean to solve a game?
+	\begin{itemize}
+	 \item<.-> Solution concepts from game theory, e.g., Nash equilibrium
+	\end{itemize}
+	\item<+-> How computationally hard is it to solve a games?
+	\begin{itemize}
+	 \item<.-> Can we solve them approximately?
+	\end{itemize}
+	\item<+-> Is there a role for (machine) learning in games?
+    \item<+-> What types of modeling problems do we face when addressing real-world games?
+   \end{itemizes}
+  \end{frame}
+  
+  %TODO ML/AI/GT
+  
+  
+  \begin{frame}{Optimization vs. Game Theory}
+   \begin{itemize}[<+->]
+    \item {\color{blue}Optimization theory}: Optimize a single objective over a decision variable
+    \begin{equation*}
+     \begin{aligned}
+      &\min.			& 	&u(x)\\
+      &\text{s.t.}		&	&x \in X
+     \end{aligned}
+    \end{equation*}
+    \item {\color{blue}Game theory}: Study of multi-agent decision problems
+    \begin{itemizes}[0.35em]
+     \item Model \alert{cooperation} and \alert{competition} between \alert{intelligent} and \alert{rational} decision makers
+     \item $n$ agents, each chooses some $x_i \in X_i$, and has a utility function
+     \begin{equation*}
+      u_i(x_i,x_{-i}), ~~~ x_{-i} = (x_1,\dots,x_{i-1},x_{i+1},\dots,x_n)
+     \end{equation*}
+     \item What are the possible outcomes?
+     \item Steady-state, stable operating point, characteristics?
+     \item How do you get there (learning dynamics, computation of equilibrium)?
+    \end{itemizes}
+   \end{itemize}    
+  \end{frame}
+  
+  \begin{frame}{Guess 2/3 of the Average (2/3-Beauty Contest Game)}
+   \begin{itemize}
+    \item Everyone writes down an integer between 0 and 100
+    \item Person closest to 2/3 of the average wins
+    \pause
+    \item Example:
+    \begin{itemize}
+     \item A says 50 - B says 10 - C says 90
+     \item 2/3 of average(50, 10, 90) = 2/3 $\times$ 50 = 33.33
+     \item A is the closest ($\vert 50-33.33\vert$ = 16.67), so A wins
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Mechanism Design}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1em}
+    \item {\color{blue} Inverse Game Theory}: Design of game forms to implement desirable outcomes
+    \begin{itemize}[<.->]
+     \item E.g. to incentivize independent agents to reveal their types truthfully
+    \end{itemize}
+    \item In Economics, MD is all about designing the right incentives
+    \begin{itemize}[<.->]
+     \item Mechanisms map \alert{signals} from independent agents into allocations and payments
+     \item Optimal Mechanisms (Myerson): Design a mechanism that maximizes profits
+     \item Efficient Mechanisms (Vickrey-Clarke-Groves (VCG) Mechanisms): Design a mechanism to maximize a \alert{social} or system-wide objective
+    \end{itemize}
+    \item In CS/Engineering, focus is more on the design of efficient decentralized protocols that take into account incentives
+    \begin{itemize}[<.->]
+     \item Mechanisms in networks, distributed and online mechanisms, mechanisms that operate with limited information
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Example: Single-item Auction}
+   \begin{itemize}
+   \setlength{\itemsep}{1.5em}
+    \item \alert{Sealed-bid auction}: every bidder submits bid in sealed envelope
+    \item \alert{First-price} sealed-bid auction: highest bid wins, pays amount of own bid
+    \item \alert{Second-price} sealed-bid auction: highest bid wins, pays amount of 2nd-highest bid
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Which Auction Generates More Revenue?}
+   \begin{itemize}
+   \setlength{\itemsep}{1.5em}
+    \item Each bid depends on
+    \begin{itemize}
+     \item bidder's true valuation for the item (utility = valuation - payment)
+     \item bidder's beliefs over what others will bid
+     \item and $\dots$ auction mechanism used
+    \end{itemize}
+    \item In first-price auction, it does not make sense to bid your true valuation
+    \begin{itemize}
+     \item Even if you win, your utility will be 0
+    \end{itemize}
+    \item In second-price auction, it always makes sense to bid your true valuation \\ (we will see this later)
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{What is Mechanism Design Again?}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1.2em}
+    \item Designing mechanism $=$ designing a game
+    \item We can use game theory to predict what will happen under mechanism
+    \begin{itemize}
+     \item If agents act strategically
+    \end{itemize}     
+    \item When is a mechanism ``good''?
+    \begin{itemize}
+     \item Should it result in outcomes that are ''good'' for \alert{reported} or for \alert{true} preferences?
+     \item Should agents ever end up lying about their preferences (in game-theoretic solution)?
+     \item Should it always generate the best allocation?
+     \item Should agents ever burn money?(!?)
+    \end{itemize}
+    \item Can we solve for the optimal mechanism?
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Acknowledgment}
+   \begin{itemize}
+    \setlength{\itemsep}{1em}
+    \item This lecture is a slightly modified version of ones prepared by
+    \begin{itemizes}
+     \item Asu Ozdaglar \href{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-254-game-theory-with-engineering-applications-spring-2010/index.htm}{[MIT 6.254]}
+     \item Vincent Conitzer \href{https://courses.cs.duke.edu//spring16/compsci590.4/}{[Duke CPS 590.4]}
+    \end{itemizes}
+   \end{itemize}
+  \end{frame}
+ 
+\end{document}

@@ -1,0 +1,105 @@
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphbox}
+\usepackage{sgamevar}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{pstricks,pst-node}
+\usepackage{bigdelim}
+\usepackage{qrcode}
+\usepackage[absolute,overlay]{textpos}
+\usepackage[ruled,vlined]{algorithm2e}
+
+% alg
+\SetKwFor{Repeat}{repeat}{}{}
+\SetKwComment{Comment}{$\triangleright$ }{}
+\SetCommentSty{textsf}
+
+% pgfplot settings
+\usepgfplotslibrary{fillbetween}
+
+% tikz settings
+\tikzset{
+    invisible/.style={text opacity=1,opacity=0},
+    visible on/.style={alt=#1{}{invisible}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}
+    },
+  }
+\newcommand{\nebox}[2][]{\tikz[baseline=(h.base)]\node[rounded corners,rectangle,draw,line width=0.7pt,text depth=-4.9pt,#1] (h) {#2};}
+\usetikzlibrary{arrows}
+
+% Customized colors
+
+\definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71}
+\definecolor{lightblue}{RGB}{140, 201, 247}
+\definecolor{darkgreen}{RGB}{113, 160, 55}
+\definecolor{darkblue}{RGB}{78, 103, 200}
+\definecolor{darkpurple}{RGB}{112, 48, 160}
+
+% Hyperlink settings
+
+\hypersetup{colorlinks,urlcolor=darkgreen}
+
+%Beamer settings
+
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsection numbered]
+
+\setbeamercolor{section in toc}{fg=blue}
+
+\AtBeginSection[ ]{
+ \begin{frame}{Outline}
+  \hypersetup{linkcolor=black}
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+% Graphics settings
+
+\graphicspath{{../Figures/}}
+
+% PGFPlot settings
+
+\pgfplotsset{compat = newest}
+
+% Gamesvar settings
+
+\setlength{\arrayrulewidth}{0.91pt}
+\renewcommand{\gamestretch}{1.68}
+\def\stackedpayoffs#1#2{%
+ \begin{array}{c}#1\\[2mm]#2\end{array}
+}
+
+% Math
+
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+\newtheorem{proposition}{Proposition}
+
+% New environments
+
+\newenvironment{itemizes}[1][1em]{
+ \vspace{#1}
+ \begin{itemize}
+ \setlength{\itemsep}{#1}
+}{
+ \end{itemize}
+}
+
+
+% Shared title frame
+
+\title{Game-theoretic \\ Foundations of Multi-agent Systems}
+
+\author{Seyed Majid Zahedi}
+\titlegraphic{\vspace{-4.2em} \includegraphics[height=5.8em]{Logos/logo2}}
+
+\date{} 
+\subject{Lecture 1} 
+\logo{\includegraphics[height=5.6em]{Logos/logo1}}
