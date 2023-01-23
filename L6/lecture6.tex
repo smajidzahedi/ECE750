@@ -1,0 +1,438 @@
+%\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
+
+\input{../Macros/main}
+\subtitle{\vspace{2.1em}Lecture 6: Repeated Games}
+
+\begin{document}
+
+ \begin{frame}[plain]
+  \titlepage
+ \end{frame}
+ 
+ 
+ \section{Finitely Repeated Games}
+  \begin{frame}{Repeated Games}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1.2em}
+    \item In a (typical) repeated game:
+    \begin{itemize}[<.->]
+     \item Agents play a given game (aka. \alert{stage game})
+     \item Then, they get their utilities
+     \item And, they play again $\dots$
+    \end{itemize}
+    \item Can be repeated \alert{finitely} or \alert{infinitely} many times
+    \item Really, an extensive form game
+    \begin{itemize}[<.->]
+    \item Would like to find subgame-perfect equilibria
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Repeated Games (cont.)}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1.2em}
+    \item One subgame-perfect equilibrium:
+    \begin{itemize}[<.->]
+     \item Keep repeating some Nash equilibrium of the stage game 
+     \item \alert{Memoryless} strategy, called a \alert{stationary strategy}
+    \end{itemize}
+    \item But are there other equilibria?
+    \begin{itemize}[<.->]
+     \item Strategy space of repeated game is much richer than that of stage game
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+
+
+  \begin{frame}{Key Questions}
+   \begin{itemize}
+   \setlength{\itemsep}{1.2em}
+    \item Do agents see what the other agents played earlier?
+    \item Do they remember what they knew?
+    \item Given utility of each stage game, what is the utility of the entire repeated game?
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Finitely Repeated Games (with Perfect Monitoring)}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1.2em}
+    \item Agents play stage game $G$ for $R$ rounds
+    \item At each round, outcomes of all past rounds are observed by all agents
+    \item Agents' overall utility is sum of \alert{discounted utilities} at each round
+    \begin{itemize}[<.->]
+     \item Discount factor is $ 0 \le \delta \le 1$
+     \item Game is denoted by $G^{R}(\delta)$
+    \end{itemize}
+    \item Given sequence of utilities $u_i^{(1)}, ..., u_i^{(R)}$, $u_i = \sum_{r=1}^{R}\delta^{r-1} u_i^{(r)}$
+   \end{itemize}
+  \end{frame}
+ 
+ 
+  \begin{frame}{Example: Finitely Repeated Prisoner's Dilemma}
+   \begin{itemize}[<+->]
+    \item Two agents play Prisoner's Dilemma for $R$ rounds ($\delta = 1$)
+    \begin{center}
+     \hspace{-3.5em}
+     \begin{game}{2}{2}
+      		\> D			\> C			\\
+      D		\> $-2,-2$	\> $-4,-1$	\\
+      C		\> $-1,-4$	\> $-3,-3$
+     \end{game}
+    \end{center}
+    \vspace{0.7em}  
+    \item Starting from last round, (C, C) is dominant strategy
+    \item Hence, in second-to-last round, there is no way to influence what will happen
+    \item So, (C, C) is dominant strategy at this round as well
+    \item The unique SPE is (C, C) at each round
+   \end{itemize}
+  \end{frame}
+  
+  \begin{frame}{SPE in Finitely Repeated Games}
+   \alert{[Theorem]}
+   \begin{itemize}
+    \item If stage game $G$ has unique strategy equilibrium $s^{*}$, then $G^{R}(\delta)$ has unique SPE in which $s^{(r)} =s^{*} $ for all $r = 1, ..., R$, regardless of history
+   \end{itemize}
+   \vspace{1em}   
+   \alert{[Proof]}
+   \begin{itemize}
+    \item By backward induction, at round $R$, we have $s^{(R)} = s^{*}$
+    \item Given this, then we have $s^{(R - 1)} = s^{*}$, and continuing inductively, $s^{(r)} = s^{*}$ for all $r = 1, ..., R$, regardless of history
+   \end{itemize}
+  \end{frame}
+
+  \begin{frame}{SPE: Example I}
+   \begin{itemize}[<+->]
+    \item Two agents play the following game for 2 rounds ($\delta = 1$)
+    \begin{center}
+     \hspace{-3.5em}
+     \begin{game}{3}{3}
+      		\> D1		\> D2		\> C			\\
+      D1		\> $4, 4$	\> $1, 1$	\> $6, 0$	\\
+      D2		\> $1, 1$	\> $2, 2$	\> $6, 0$	\\
+      C		\> $0, 6$	\> $0, 6$	\> $5, 5$
+     \end{game}
+    \end{center}
+    \vspace{0.7em}  
+    \item Consider the following strategy:
+    \begin{itemize}[<.->]
+     \item In round 1, cooperate;
+     \item In round 2, if someone defected in round 1, play D2; otherwise, play D1
+    \end{itemize}
+    \item If both agents play this, is that SPE?
+   \end{itemize}
+  \end{frame}  
+ 
+
+  \begin{frame}{SPE: Example II}
+   \begin{itemize}[<+->]
+    \item Two agents play the following game for 2 rounds ($\delta = 1$)
+    \begin{center}
+     \hspace{-3.5em}
+     \begin{game}{3}{3}
+      		\> D			\> Crazy		\> C			\\
+      D		\> $4, 4$	\> $1, 0$	\> $6, 0$	\\
+      Crazy	\> $0, 1$	\> $0, 0$	\> $0, 1$	\\
+      C		\> $0, 6$	\> $1, 0$	\> $5, 5$
+     \end{game}
+    \end{center}
+    \vspace{0.7em}  
+    \item What are the subgame perfect equilibria?
+    \item Consider the following strategy:
+    \begin{itemize}[<.->]
+     \item In round 1, cooperate;
+     \item In round 2, if someone played D or Crazy in round 1, play Crazy; otherwise, play D
+    \end{itemize}
+    \item If both agents play this, is that NE (not SPE)?
+   \end{itemize}
+  \end{frame} 
+  
+  
+  \begin{frame}{TSPE: Example III}
+   \begin{itemize}
+    \item  If $G$ has multiple equilibria, then $G^{R}(\delta)$ does not have unique SPE
+    \item Consider following example
+    \begin{center}
+     \hspace{-3.5em}
+     \begin{game}{3}{3}
+      	\> x			\> y			\> z			\\
+      x	\> $3, 3$	\> $0, 4$	\> $-2, 0$	\\
+      y	\> $4, 0$	\> $1, 1$	\> $-2, 0$	\\
+      z	\> $0, -2$	\> $0, -2$	\> $-1, -1$
+     \end{game}
+    \end{center}
+    \vspace{0.7em}
+    \item Stage game has two pure NE: (y, y) and (z, z)
+    \item Consider the following policy:
+    \begin{itemize}
+     \item Play x in first round
+     \item Play y in second round if opponent played x; otherwise, play z
+    \end{itemize}
+    \item Is both agents playing this SPE?
+   \end{itemize}  
+  \end{frame}
+
+ \section{Infinitely Repeated Games}
+ 
+  \begin{frame}{Utilities in Infinitely Repeated Games}
+   \begin{itemizes}[2em]
+    \item \alert{Average utility}: 
+    $$u_i = \lim_{R\rightarrow\infty}\frac{\sum_{r=1}^{R}u_i^{(r)}}{R}$$
+    \item \alert{Discounted utility}: 
+    $$u_i = \sum_{r=1}^{R}\delta^{r-1} u_i^{(r)},$$
+    for some $0 \ge \delta < 1$
+   \end{itemizes}
+  \end{frame}
+  
+  
+  \begin{frame}{Subgame Perfection in Infinitely Repeated Games}
+   \begin{itemize}
+   \setlength{\itemsep}{2em}
+    \item \alert{One-shot deviation} from strategy $s$ means deviating from $s$ in single stage and conforming to it thereafter
+    \item Strategy profile $s^*$ is SPE \alert{if and only if} there are no \alert{profitable} one-shot deviation for \alert{each subgame} and \alert{every agent}
+    \item This follows from principle of optimality of \alert{dynamic programming}
+    \item This applies to finitely repeated games as well
+   \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Trigger Strategies (TS)}
+   \begin{itemize}
+    \item Agents get \alert{punished} if they deviate from agreed profile
+    \item In \alert{non-forgiving} TS (or grim TS), punishment continues forever
+    $$ 
+    s_i^{(t)}=\begin{cases}
+                  s_i^* &\text{if } s^{(r)} = s^* \;\; \forall r<t,\\
+                  \underline{s}_{i}^{j} &\text{otherwise}\\
+                 \end{cases}
+    $$
+    \item Here, $s^{*}$ is agreed profile, and $\underline{s}_{i}^{j}$ is punishment strategy of $i$ against agent $j$
+    \item Single deviation by $j$ triggers agent $i$ to switch to $\underline{s}_{i}^{j}$ \alert{forever}
+   \end{itemize}
+  \end{frame}
+
+
+  \begin{frame}{Example: Infinitely Repeated Prisoner's Dilemma} 
+   \begin{columns}
+    \begin{column}{0.7\textwidth}
+     \begin{itemize}[<+->]
+     \setlength{\itemsep}{1.2em}
+      \item Consider \alert{trigger} strategy:
+      \begin{itemize}[<.->]
+       \item Cooperate as long as everyone cooperates
+       \item Once a player defects, defect \alert{forever}
+      \end{itemize}
+      \item Is both agents playing this SPE?
+      \item Does it depend on $\delta$?
+     \end{itemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+     \begin{center}
+      \begin{game}{2}{2}
+      		\> D			\> C			\\
+       D		\> $-2,-2$	\> $-4,-1$	\\
+       C		\> $-1,-4$	\> $-3,-3$
+      \end{game}
+     \end{center}
+    \end{column}
+   \end{columns}
+  \end{frame}
+  
+  
+  \begin{frame}{Trigger Strategy for Infinitely Repeated Prisoners' Dilemma}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{0.7em}
+    \item We can use one-stage deviation principle
+    \item There are two types of subgames:
+    \begin{itemize}[<.->]
+     \item Type 1: Both agents cooperated so far
+     \item Type 2: At least one agent defeated in the past
+    \end{itemize}
+    \item Type-1 subgames: (D is best response to D)
+    \begin{itemize}
+     \item Utility from no deviation: $-2 (1 + \delta + \delta^{2} + \dots = - 2/(1 - \delta )$
+     \item Utility from on-shot deviation: $-1 - 3(\delta + \delta^{2} + \dots = - 1 - 3\delta/(1 - \delta )$
+     \item Deviation is not beneficial if $\delta  \geq  1/2$
+    \end{itemize}
+    \item Type-2 subgames: (C is best response to C)
+    \begin{itemize}
+     \item Other agents will always play C, thus C is best response
+    \end{itemize}  
+   \end{itemize}
+  \end{frame}    
+    
+  \begin{frame}{Tit-for-tat Strategy}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1.2em}
+    \item Consider \alert{tit-for-tat} strategy:
+    \begin{itemize}[<.->]
+     \item Cooperate in 1st round
+     \item Then, do whatever other agent did in previous round
+    \end{itemize}
+    \item Is both agents playing this NE?
+    \item Is both agents playing this SPE?
+    \item What about one playing TFT and other trigger?
+   \end{itemize}
+  \end{frame}
+  
+
+  \begin{frame}{Remarks}
+   \begin{itemize}
+   \setlength{\itemsep}{2em}
+    \item If $s^{*}$ is NE of $G$, then ``each agent plays $s_i^{*}$'' is SPE of $G^{R}(\delta)$
+    \begin{itemize}
+     \item Future play of other agents is independent of how each agent plays
+     \item Optimal play is to maximize current utility, i.e., play static best response
+    \end{itemize} 
+    \item Sets of equilibria for finite and infinite horizon versions can be \alert{different}
+    \begin{itemize}
+     \item Multiplicity of equilibria in repeated prisoner's dilemma only occurs at $R = \infty$
+     \item For any finite $R$ (thus for $R \rightarrow \infty$), repeated prisoners' dilemma has unique SPE
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+
+
+  \begin{frame}{Repetition Could Lead to Bad Outcomes}
+   \begin{itemize}
+   \setlength{\itemsep}{0.5em}
+    \item Consider the following game
+    \begin{center}\scriptsize
+     \hspace{-3.5em}
+     \begin{game}{3}{3}
+      	\> x 		\> y			\> z			\\
+      x	\> $2, 2$	\> $2, 1$	\> $0, 0$	\\
+      y	\> $1, 2$	\> $1, 1$	\> $-1, 0$	\\
+      z	\> $0, 0$	\> $0, -1$	\> $-1, -1$
+     \end{game}
+    \end{center}
+    \vspace{0.7em}
+    \item Strategy x strictly dominates y and z for both agents
+    \item Unique NE of stage game is (x, x)
+    \item If $\delta \geq 1/2 $, this game has SPE in which (y, y) is played in every round
+    \item It is supported by slightly more complicated strategy than grim trigger
+    \begin{itemize}
+     \item I. Play y in every round unless someone deviates, then go to II
+     \item II. Play z. If no one deviates go to I. If someone deviates stay in II
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+  
+  
+ \section{Folk Theorem}  
+  
+  \begin{frame}{Characterizing NE of Infinitely Repeated Games}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{0.7em}
+    \item Characterizing all equilibrium strategy profiles might be challenging
+    \item Instead, we can characterize utilities obtained in them
+    \item Such utilities must be \alert{feasible}
+    \begin{itemize}[<.->]
+     \item There must be outcomes of game such that agents, on average, get these utilities
+    \end{itemize}
+    \item They must also be \alert{enforceable}
+    \begin{itemize}[<.->]
+     \item Deviation should lead to punishment that outweighs benefits of deviation
+    \end{itemize}
+    \item \alert{Folk theorem} states that utility vector can be realized by some NE iff it is both feasible and enforceable
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Feasibility}
+   \begin{center}
+    \hspace{-2em}
+    \begin{game}{2}{2}
+     		\> Left		\> Right		\\
+     Left	\> $2, 2$	\> $0, 3$	\\
+     Right	\> $3, 0$	\> $1, 1$
+    \end{game}
+   \end{center}
+   \begin{itemize}[<+->]
+    \item Utility vector (2, 2) is feasible as it is one of outcomes of game
+    \item Utility vector (1, 2.5) is feasible as agents can alternate between (2, 2) and (0, 3)
+    \item What about (0.5, 2.75)?
+    \item What about (3, 0.1)?
+    \item In general, convex hall of outcomes of game are feasible
+    \begin{itemize}
+     \item<.-> $p_1x_1 + \dots + p_nx_n$ is convex hall of $x_i$ if $p_i$ sum to 1 and are non negative
+    \end{itemize}
+   \end{itemize}
+  \end{frame}
+
+
+  \begin{frame}{Feasible and Individually Rational Utilities}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1.2em}
+    \item \alert{Feasible utilities}: 
+    $$V = \text{Conv}\{ v \in  \mathbb{R}^{\mid N \mid} \mid \text{ there exists } a \in A \text{ such that } u(a) = v \}$$
+    \item Note that $V \neq  \{ v \in  \mathbb{R} ^{\mid N \mid}  \mid \text{ there exists } s \in S \text{ such that } u (s) = v \}$
+    \item Recall \alert{minmax value} of agent $i$: 
+    $$\underline{v}_i = \underset{s_{-i}}{\min} \; \underset{s_{i}}{\max} \; u_{i}(s_i,s_{-i})$$
+    \item Utility vector  $ v \in  \mathbb{R} ^{\mid N \mid}$  is \alert{strictly individually rational} if $v_{i}  > \underline{v}_i$ for all $i$   
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Nash Folk Theorem}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1.2em}
+    \item Consider infinitely repeated game $G$ played by agents with \alert{average utilities}
+    \item If $u$ is utility profile for any NE of repeated $G$, then $u_i$ is enforceable for all$i$
+    \item If $u$ is both feasible and enforceable, then $u$ is utility profile for some NE of $G$
+    \item Folk theorem can be stated for agents with discounted utilities as well
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Problems with Nash Folk Theorem}
+   \begin{itemize}[<+->]
+    \setlength{\itemsep}{1em}
+    \item Any feasible and enforceable utility can be achieved (for \alert{patient enough} agents)
+    \item Enforcement is often done by grim trigger strategy
+    \begin{itemize}
+     \item Play certain strategy as long as no one deviates
+     \item If some agent $j$  deviates, then play minmax strategy against that agent thereafter
+    \end{itemize}
+    \item NE involves non-forgiving TS which may be costly for punishers
+    \item NE may include \alert{non-credible threats}
+    \item NE may not be subgame perfect
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Example}
+   \begin{center}
+    \hspace{-0.2em}
+    \begin{game}{2}{2}
+     	\> L			\> R				\\
+     U	\> $6, 6$	\> $ 0, -100$	\\
+     D	\> $7, 1$	\> $ 0, -100$
+    \end{game}
+   \end{center}
+   \vspace{1em}
+   \begin{itemize}
+    \item Unique NE in this game is (D, L)
+    \item Minmax values are given by $\underline{v_{1}} = 0 $ and $\underline{v_{2}} = 1 $ 
+    \item Minmax strategy against agent 1 requires agent 2 to play R
+    \item R is strictly dominated by L for agent 2
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Acknowledgment}
+   \begin{itemize}
+   \setlength{\itemsep}{1em}
+    \item This lecture is a slightly modified version of ones prepared by
+    \begin{itemize}
+     \item Asu Ozdaglar \href{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-254-game-theory-with-engineering-applications-spring-2010/index.htm}{[MIT 6.254]}
+     \item Vincent Conitzer \href{https://courses.cs.duke.edu/spring16/compsci590.4/}{[Duke CPS 590.4]}
+    \end{itemize}
+    \item Elly Khodaie helped with importing slides from PowerPoint to \LaTeX
+   \end{itemize}
+  \end{frame}
+
+
+
+\end{document}
