@@ -181,7 +181,7 @@
     \item \alert{Average utility}: 
     $$u_i = \lim_{R\rightarrow\infty}\frac{\sum_{r=1}^{R}u_i^{(r)}}{R}$$
     \item \alert{Discounted utility}: 
-    $$u_i = \sum_{r=1}^{R}\delta^{r-1} u_i^{(r)},$$
+    $$u_i = (1 - \delta) \sum_{r=1}^{\infty}\delta^{r-1} u_i^{(r)},$$
     for some $0 \ge \delta < 1$
    \end{itemizes}
   \end{frame}
@@ -251,8 +251,8 @@
     \end{itemize}
     \item Type-1 subgames: (D is best response to D)
     \begin{itemize}
-     \item Utility from no deviation: $-2 (1 + \delta + \delta^{2} + \dots = - 2/(1 - \delta )$
-     \item Utility from on-shot deviation: $-1 - 3(\delta + \delta^{2} + \dots = - 1 - 3\delta/(1 - \delta )$
+     \item Utility from no deviation: $(1 - \delta) (-2 - 2\delta - 2\delta^{2} + \dots) = - 2$
+     \item Utility from on-shot deviation: $(1 - \delta) (-1 + (-3\delta -3\delta^{2} + \dots) = - (1 - \delta ) - 3\delta$
      \item Deviation is not beneficial if $\delta  \geq  1/2$
     \end{itemize}
     \item Type-2 subgames: (C is best response to C)
@@ -414,11 +414,141 @@
    \vspace{1em}
    \begin{itemize}
     \item Unique NE in this game is (D, L)
-    \item Minmax values are given by $\underline{v_{1}} = 0 $ and $\underline{v_{2}} = 1 $ 
+    \item Minmax values are given by $\underline{v}_{1} = 0 $ and $\underline{v}_{2} = 1 $ 
     \item Minmax strategy against agent 1 requires agent 2 to play R
     \item R is strictly dominated by L for agent 2
    \end{itemize}
   \end{frame}
+  
+ \section{Repeated Games with Imperfect Monitoring}
+ 
+  \begin{frame}{Motivation}
+   \begin{itemizes}[1.5em]
+    \item So far, we assumed that agents observe actions of others at each round of game
+    \item Next, we consider games where agents' actions may not be directly observable
+    \item We assume that agents observe only an \alert{imperfect signal} of stage game actions
+   \end{itemizes}
+  \end{frame}   
+ 
+  
+  \begin{frame}{Example: Cournot Competition with Noisy Demand\\
+  \vspace{-0.2cm}{\scriptsize [Green and Porter, Non-cooperative Collusion under Imperfect Price Information, 1984]}}
+   \begin{itemizes}
+    \item Firms set production levels $q_1^{(r)}, \dots, q_n^{(r)}$ \alert{privately} at round $r$
+    \item Firms do not observe each others' output levels
+    \item Market demand is \alert{stochastic}
+    \item Market price depends on total production and market demand
+    \item Low price could be due to high production or low demand
+    \item Firms utility depends on their own production and market price
+   \end{itemizes}
+  \end{frame}
+
+
+  \begin{frame}{Model}
+   \begin{itemizes}
+    \item We focus on game with \alert{public information}
+    \item At each round, \alert{all agents} observe some \alert{public outcome}
+    \item Let $y^{(r)} \in Y$ denote publicly observed outcome at round $r$
+    \item Each action profile $a$ induces \alert{probability distribution} over $y$
+    \item Let $\pi (y, a)$ denote probability distribution of y under action profile $a$
+    \item Public information at round $r$ is $h^{(r)}=(y^{(1)}, \dots, y^{(r-1)})$
+    \item Strategy of agent $i$ is \alert{sequence of maps} $s_i^{(r)}: h^{(r)} \rightarrow S_i$ 
+   \end{itemizes}
+  \end{frame}
+  
+  \begin{frame}{Model (cont.)}
+   \begin{itemize}[<+->]
+    \item Agents utility depends \alert{only} on their own action and public outcome
+    \item Dependence on actions of others is through their effect on distribution of $y$
+    \item Agent $i$'s \alert{realized} utility at round $r$ is $u_i(a_i^{(r)}, y^{(r)})$
+    \item Agent $i$'s expected stage utility is
+    $$
+    u_i(a) =\sum_{y\in Y}\pi(y,a)u_i(a_i,y) 
+    $$
+    \item Agent $i$'s average discounted utility when sequence $\{ a^{(t)}\}$ is played is
+    $$
+     (1 - \delta)\sum_{r=1}^{\infty}\delta^{r-1} u_i(a^{(r)}) 
+    $$
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Simpler Example: Noisy Prisoner's Dilemma}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{0.5em}
+    \item Prisoners do not observe each others actions, instead, they observe signal $y$
+    \begin{itemize}
+     \item $u_{1}(D, y) = 1 + y $   \hspace{1cm} $u_{1}(C, y) = 4 + y $ 
+     \item $u_{2}(D, y) = 1 + y $   \hspace{1cm} $u_{2}(C, y) = 4 + y $ 
+    \end{itemize}
+    \item Signal $y$ is defined by cont. random variable $X$ with CDF $F(x)$ and $\mathbb{E}[X] = 0$
+    \begin{itemize}
+     \item If $a = (D, D)$, then $y = X$
+     \item If $a = (D, C)$ or $(C, D)$, then $y = X - 2$
+     \item If $a = (D, D)$, then $y = X - 4$ 
+    \end{itemize}
+    \item Normal-form stage game is
+    \begin{center}\footnotesize
+     \hspace{-6em}
+     \begin{game}{2}{2}
+      	\> D					\> C						\\
+      D	\> $1 + X, 1 + X$	\> $ -1 + X, 2 + X$	\\
+      C	\> $2 + X, -1 + X$	\> $ X, X$
+     \end{game}
+    \end{center}
+   \end{itemize}
+  \end{frame}
+
+  
+  \begin{frame} {Trigger-price Strategy}
+   \begin{itemizes}[1.2em]
+    \item Consider following trigger strategy
+    \begin{itemize}
+     \item (I) - Play $(D, D)$ until $y \le y^{*}$, then go to (II)
+     \item (II) - Play$ (C, C)$ for $R$ rounds, then go back to (I)
+    \end{itemize}
+    \item Notice that strategy is stationary and symmetric
+    \item Also notice that punishment uses \alert{NE of stage game}
+    \item We can choose $y^{*}$ and $R$ such that this strategy profile is SPE
+   \end{itemizes}
+  \end{frame}
+
+
+  \begin{frame} {Trigger-price Strategy (cont.)}
+   \begin{itemizes}
+    \item We use one-shot deviation principle
+    \item Deviation in (II) is obviously not beneficial
+    \item In (I), if agents do not deviate, their \alert{expected utility} is
+    $$
+    v = (1-\delta)\left((1+0)+\delta\left(F(y^*)\delta^{R} v + (1-F(y^*)) v \right)\right)
+    $$
+    \item From this, we obtain
+    $$
+    v = \frac{1-\delta}{1-\delta(1-\delta)\big(1-F(y^*)(1-\delta^{R})\big)}
+    $$    
+   \end{itemizes}
+  \end{frame}
+
+  \begin{frame}{Trigger-price Strategy (cont.)}
+   
+   \begin{itemize}
+    \item If some agent deviates in (1), then her expected utility is
+    $$
+    v_d = (1-\delta)\left((2+0)+\delta\left(F(y^*+2)\delta^{R} v + (1-F(y^*+2)) v \right)\right)
+    $$
+    \item Deviation provides immediate utility, but increases probability of entering (II)
+    \item To have SPE, we mush have $v \geq v_d$ which means
+    $$
+    v \ge \frac{2(1-\delta)}{1-\delta(1-\delta)\big(1-F(y^*+2)(1-\delta^{R})\big)}
+    $$
+    $$
+    \Rightarrow F(y^*+2)-2F(y^*) \ge \frac{1-\delta(1-\delta)}{\delta(1-\delta)(1-\delta^{R})}
+    $$
+    \item  Any $R$ and $y^{*}$ that satisfy this constraint construct SPE
+    \item \alert{Best trigger-price strategy} can be found by maximizing $v$ s.t. this constraint
+   \end{itemize}
+ 
+  \end{frame}  
   
   
   \begin{frame}{Acknowledgment}
