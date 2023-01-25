@@ -632,15 +632,25 @@
    \begin{center}
     \hspace{-3.5em}
     \begin{game}{2}{2}
-     		\> Heads		\> Tails		\\
-     Heads	\> $-1,1$	\> $1,-1$	\\
-     Tails	\> $1,-1$	\> $-1,1$
+     		\> H		\> T		\\
+     H	\> $-1,1$	\> $1,-1$	\\
+     T	\> $1,-1$	\> $-1,1$
     \end{game}
    \end{center}
+   \vspace{0.5cm}
    \begin{itemize}[<+->]
-    \item Row playing H is rationalizable (Row could believe Col plays H)
-    \item Col playing H is rationalizable (Col could believe Row plays T)
-    \item Row playing T is rationalizable (Col could believe Row believes Col plays T)
+    \item Col playing H is rationalizable
+    \begin{itemize}
+     \item Col could believe Row plays H
+    \end{itemize}
+    \item Col believing that Row plays H is rationalizable
+    \begin{itemize}
+     \item Col could believe Row believes Col plays T
+    \end{itemize}
+    \item Col believing that Row believes that Col plays T is rationalizable
+    \begin{itemize}
+     \item Col could believe Row believes Col believes Row plays T
+    \end{itemize}
     \item $\dots$
     \item In this game, all pure strategies are rationalizable
    \end{itemize}
