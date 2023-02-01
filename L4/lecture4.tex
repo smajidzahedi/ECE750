@@ -361,6 +361,14 @@
   \end{frame}
  
  \section{Dominated Strategies}
+  
+  \begin{frame}{Recall: Strict Dominance}
+   \begin{center}
+    $a_i$ \alert{strictly dominates} $s_i$ if $u_i(a_i, s_{-i}) > u_i(s_i,s_{-i})$ $\forall s_{-i} \in S_{-i}$
+   \end{center}
+  \end{frame}
+  
+  
   \begin{frame}{Dominance by Pure Strategy}
    \begin{algorithm*}[H]
     \For{all $a_i \in A_i$ where $a_i \ne s_i$}{
@@ -381,11 +389,6 @@
    \end{algorithm*}
   \end{frame}
   
-  \begin{frame}{Recall: Strict Dominance}
-   \begin{center}
-    $a_i$ \alert{strictly dominates} $s_i$ if $u_i(a_i, s_{-i}) > u_i(s_i,s_{-i})$ $\forall s_{-i} \in S_{-i}$
-   \end{center}
-  \end{frame}
     
   \begin{frame}{Dominance by Pure Strategy: Discussion}
    \begin{itemize}[<+->]
@@ -396,8 +399,8 @@
     \item In Alg. (\ref{alg:IDS}), we do not check every mixed-strategy profile of others, why?
     \begin{itemize}
     \setlength{\itemsep}{0.8em}
-     \item Suppose $a_i$ does not strictly dominate $s_i$ for all $a_{-i}$
-     \item Then, there is no $s_{-i}$ for which $a_i$ strictly dominates $s_i$
+     \item Suppose $a_i$ strictly dominates $s_i$ for all $a_{-i}$
+     \item Then, there is no $s_{-i}$ for which $u_i(a_i, s_{-i}) \ge u_i(s_i, s_{-i})$
      \item This holds because of the linearity of expectation
     \end{itemize}
    \end{itemize}
@@ -408,7 +411,7 @@
     \item<1-> Checking if strategy $s_i$ is weakly dominated by any mixed strategy
     \begin{equation*}
      \begin{aligned}
-      \visible<3->{& \text{max.} & & \sum_{a_{-i}\in A_{-i}}\left[\left(\sum_{a_i \in A} p_{a_i} u_{i}(a_i, a_{-i})\right) - u_i(s_i, a_{-i})\right] &\\}
+      \visible<3->{& \text{max.} & & \sum_{a_{-i}\in A_{-i}}\left[\left(\sum_{a_i \in A_i} p_{a_i} u_{i}(a_i, a_{-i})\right) - u_i(s_i, a_{-i})\right] &\\}
       \visible<2->{& \text{s.t.} & &  \sum_{a_i\in A_i} p_{a_i} u_i(a_i,a_{-i}) \ge u_i(s_i,a_{-i}) & \forall a_{-i}\in A_{-i} \\
       & & &  \sum_{a_i\in A_i}p_{a_i} = 1 & \\
       & & &  p_{a_i} \ge 0, & \forall a_i \in A_i \\}
@@ -580,7 +583,7 @@
    \hspace{0.5em}
     \begin{column}{0.49\textwidth}
      \begin{itemize}
-      \item<1-> Maximin value for agent 1
+      \item<1-> Maxmin value for agent 1
       \vspace{0.5em}
       \onslide<2->{\footnotesize 
        $$
@@ -618,9 +621,9 @@
    \end{itemize}
   \end{frame}
   
-  \begin{frame}{Maximin Strategy for General-sum Games}
+  \begin{frame}{Maxmin Strategy for General-sum Games}
    \begin{itemize}
-    \item<1-> Agents could still play minimax strategy in general-sum games
+    \item<1-> Agents could still play minmax strategy in general-sum games
     \begin{itemize}
      \item<2-> I.e., pretend that the opponent is only trying to hurt you
     \end{itemize}
