@@ -294,7 +294,7 @@
     \end{itemize}
     \item Standard packages for solving these
     \begin{itemize}
-     \item Gurobi, MOSEK, GNU Linear Programming Kit, CPLEX, CVXPY, etc.
+     \item Gurobi, MOSEK, GNU Linear Programming Kit, CPLEX, CVXOPT, etc.
     \end{itemize}
     \item LP relaxation of (M)ILP: remove integrality constraints
     \begin{itemize}
@@ -381,12 +381,18 @@
    \end{algorithm*}
   \end{frame}
   
+  \begin{frame}{Recall: Strict Dominance}
+   \begin{center}
+    $a_i$ \alert{strictly dominates} $s_i$ if $u_i(a_i, s_{-i}) > u_i(s_i,s_{-i})$ $\forall s_{-i} \in S_{-i}$
+   \end{center}
+  \end{frame}
+    
   \begin{frame}{Dominance by Pure Strategy: Discussion}
    \begin{itemize}[<+->]
    \setlength{\itemsep}{1.2em}
     \item Complexity of the Algorithm is $O(\vert A\vert)$, linear in the size of normal-form game
-    \item (Recall) $a_i$ \alert{strictly dominates} $s_i$ if $u_i(a_i, s_{-i}) > u_i(s_i,s_{-i})$ $\forall s_{-i} \in S_{-i}$
-    \item This definition refers to mixed-strategy profile of other agents
+    \item Recall: $a_i$ \alert{strictly dominates} $s_i$ if $u_i(a_i, s_{-i}) > u_i(s_i,s_{-i})$ $\forall s_{-i} \in S_{-i}$
+    \item<.-> This definition refers to mixed-strategy profile of other agents
     \item In Alg. (\ref{alg:IDS}), we do not check every mixed-strategy profile of others, why?
     \begin{itemize}
     \setlength{\itemsep}{0.8em}
@@ -519,8 +525,8 @@
    \begin{frame}{Computational Questions for Iterated Dominance}
     \begin{itemize}[<+->]
     \setlength{\itemsep}{1.2em}
-     \item Does there exist some elimination path under which $s_i$ is eliminated?
-     \item Does there exist maximally reduced game where each agent has exactly 1 action?
+     \item Is there some elimination path under which $s_i$ is eliminated?
+     \item Is there maximally reduced game where each agent has exactly 1 action?
      \item For \alert{strict dominance}, both can be solved in polynomial time
      \begin{itemize}[<.->]
       \item Due to path-independence
@@ -563,7 +569,7 @@
      \end{aligned}
     $$
     \item<2-> Given $p_{a_i}$, first constraint ensures that $U_i$ is less than any achievable expected utility for any pure strategies of opponents
-    \item<4-> Objective of this LP, $u$, is \alert{maxmin value} of agent $i$
+    \item<4-> Objective of this LP, $U_i$, is \alert{maxmin value} of agent $i$
    \end{itemize}
   \end{frame}
 
