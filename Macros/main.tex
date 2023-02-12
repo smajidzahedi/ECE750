@@ -10,12 +10,14 @@
 \usepackage{qrcode}
 \usepackage[absolute,overlay]{textpos}
 \usepackage[ruled,vlined]{algorithm2e}
+\usepackage{setspace}
+
+
 
 % alg
 \SetKwFor{Repeat}{repeat}{}{}
 \SetKwComment{Comment}{$\triangleright$ }{}
 \SetCommentSty{textsf}
-
 % pgfplot settings
 \usepgfplotslibrary{fillbetween}
 
@@ -29,7 +31,6 @@
   }
 \newcommand{\nebox}[2][]{\tikz[baseline=(h.base)]\node[rounded corners,rectangle,draw,line width=0.7pt,text depth=-4.9pt,#1] (h) {#2};}
 \usetikzlibrary{arrows}
-
 % Customized colors
 
 \definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71}
@@ -80,6 +81,7 @@
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
 
+\newcommand\given[1][]{\:#1\vert\:}
 \newtheorem{proposition}{Proposition}
 
 % New environments
