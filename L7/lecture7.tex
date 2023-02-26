@@ -1,5 +1,5 @@
-\documentclass[11pt,aspectratio=169]{beamer}
-%\documentclass[11pt,aspectratio=169,handout]{beamer}
+%\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
 
 \input{../Macros/main}
 \subtitle{\vspace{2.1em}Lecture 7: Stochastic Games}
@@ -461,7 +461,6 @@
   
   \begin{frame}{Shapley Algorithm: Finding MPE in 2-player Zero-sum Games}
    \begin{algorithm*}[H]
-   \setstretch{1.35}	
     Initialize $V_0(s)$ arbitrarily for all $s$\Comment*{Agent 1's utility for being in $s$}
     \Repeat{until $V(s)$ converges for all $s$}{
      \For{each state $s$}{
@@ -539,7 +538,6 @@
   
   \begin{frame}{Pollatschek \& Avi-Itzhak Algorithm (Extension of Policy Iteration)}
    \begin{algorithm*}[H]
-   \setstretch{1.35}	
     Initialize $V(s)$ arbitrarily for all $s$\Comment*{Agent 1's utility for being in $s$}
     \Repeat{until $\pi_1(s)$ and $\pi_2(s)$ converge for all $s$}{
      \For{each state $s$}{
