@@ -339,8 +339,18 @@
    \end{itemize}
   \end{frame}
   
+  \begin{frame}{Feasible Utilities: Formal Definition}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1.2em}
+    \item \alert{Utility profile} $u = (u_1,u_2,\dots,u_n)$ is \alert{feasible} if there exist \alert{rational}, \alert{non-negative} values $\{\alpha_a\}$ such that for all $i$, $u_i = \sum_{a\in A} \alpha_a u_i(a)$, with $\sum_{a\in A} \alpha_a = 1$
+    \item You could think of feasible utilities as \alert{convex hull} of possible outcomes:
+    $$U = \text{Conv}\{ u \in  \mathbb{R}^{\mid N \mid} \mid \text{ there exists } a \in A \text{ such that } u(a) = u \}$$
+    \item Note that $U \neq  \{ u \in  \mathbb{R} ^{\mid N \mid}  \mid \text{ there exists } s \in S \text{ such that } u(s) = u \}$
+   \end{itemize}
+  \end{frame}
   
-  \begin{frame}{Feasibility}
+  
+  \begin{frame}{Feasibility: Example}
    \begin{center}
     \hspace{-2em}
     \begin{game}{2}{2}
@@ -349,28 +359,23 @@
      Right	\> $3, 0$	\> $1, 1$
     \end{game}
    \end{center}
+   \vspace{1em}
    \begin{itemize}[<+->]
     \item Utility vector (2, 2) is feasible as it is one of outcomes of game
     \item Utility vector (1, 2.5) is feasible as agents can alternate between (2, 2) and (0, 3)
     \item What about (0.5, 2.75)?
     \item What about (3, 0.1)?
-    \item In general, convex hall of outcomes of game are feasible
-    \begin{itemize}
-     \item<.-> $p_1x_1 + \dots + p_nx_n$ is convex hall of $x_i$ if $p_i$ sum to 1 and are non negative
-    \end{itemize}
    \end{itemize}
   \end{frame}
 
 
-  \begin{frame}{Feasible and Individually Rational Utilities}
+  \begin{frame}{Enforceable and Individually Rational Utilities}
    \begin{itemize}[<+->]
    \setlength{\itemsep}{1.2em}
-    \item \alert{Feasible utilities}: 
-    $$V = \text{Conv}\{ v \in  \mathbb{R}^{\mid N \mid} \mid \text{ there exists } a \in A \text{ such that } u(a) = v \}$$
-    \item Note that $V \neq  \{ v \in  \mathbb{R} ^{\mid N \mid}  \mid \text{ there exists } s \in S \text{ such that } u (s) = v \}$
     \item Recall \alert{minmax value} of agent $i$: 
     $$\underline{v}_i = \underset{s_{-i}}{\min} \; \underset{s_{i}}{\max} \; u_{i}(s_i,s_{-i})$$
-    \item Utility vector  $ v \in  \mathbb{R} ^{\mid N \mid}$  is \alert{strictly individually rational} if $v_{i}  > \underline{v}_i$ for all $i$   
+    \item Utility profile $u \in  \mathbb{R} ^{\mid N \mid}$  is \alert{individually rational} if $u_{i}  \ge \underline{v}_i$ for all $i$
+    \item Utility profile $u = (u_1,u_2,\dots,u_n)$ is \alert{enforceable} if it is individually rational
    \end{itemize}
   \end{frame}
   
@@ -379,7 +384,7 @@
    \begin{itemize}[<+->]
    \setlength{\itemsep}{1.2em}
     \item Consider infinitely repeated game $G$ played by agents with \alert{average utilities}
-    \item If $u$ is utility profile for any NE of repeated $G$, then $u_i$ is enforceable for all$i$
+    \item If $u$ is utility profile for any NE of repeated $G$, then $u_i$ is enforceable for all $i$
     \item If $u$ is both feasible and enforceable, then $u$ is utility profile for some NE of $G$
     \item Folk theorem can be stated for agents with discounted utilities as well
    \end{itemize}
