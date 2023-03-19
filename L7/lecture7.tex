@@ -157,7 +157,7 @@
      \begin{itemize}
      \setlength{\itemsep}{1.2em}
       \item A \alert{(stationary, deterministic)} policy $\pi: S \mapsto A$ gives action for each state
-      \item An alert{optimal} policy is one that maximizes expected utility if followed
+      \item An \alert{optimal} policy is one that maximizes expected utility if followed
      \end{itemize}
     \end{column}
     \begin{column}{0.4\textwidth}
@@ -173,7 +173,7 @@
    \begin{itemize}[<+->]
    \setlength{\itemsep}{1em}
     \item \alert{Value function}: $V^\pi(s)$ specifies value of following $\pi$ starting in $s$
-    $$V^\pi(s)=\mathbb{E}\left[\sum_{t=1}^{\infty}\delta^{t-1}r_t(s_t, \pi(s_t), s_{t+1})\right]$$
+    $$V^\pi(s)=\mathbb{E}\left[\sum_{t=1}^{\infty}\delta^{t-1}r_t(s_t, \pi(s_t), s_{t+1}) \given s_0 = s\right]$$
     \item \alert{State-action value function}: $Q^\pi(s,a)$ returns value of starting in $s$, taking $a$, and then continuing according to $\pi$
     \item These two are related to each other by
     \begin{align*}
@@ -224,8 +224,8 @@
    \vspace{0.5cm}
    \begin{itemize}
     \item<2-> Bellman equations \alert{characterize} the optimal values
-    \item<+-> Value iteration \alert{computes} them
-    \item<+-> Value iteration is just a \alert{fixed-point} solution method
+    \item<3-> Value iteration \alert{computes} them
+    \item<4-> Value iteration is just a \alert{fixed-point} solution method
    \end{itemize}
   \end{frame}
   
