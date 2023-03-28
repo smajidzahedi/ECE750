@@ -8,6 +8,7 @@
 \usepackage{pstricks,pst-node}
 \usepackage{bigdelim}
 \usepackage{qrcode}
+\usepackage{dsfont}
 \usepackage[absolute,overlay]{textpos}
 \usepackage[ruled,vlined]{algorithm2e}
 
@@ -37,6 +38,8 @@
 \definecolor{darkgreen}{RGB}{113, 160, 55}
 \definecolor{darkblue}{RGB}{78, 103, 200}
 \definecolor{darkpurple}{RGB}{112, 48, 160}
+\definecolor{xgray}{rgb}{0.75, 0.75, 0.75}
+\definecolor{lightgreen}{rgb}{0.56, 0.93, 0.56}
 
 % Hyperlink settings
 
@@ -79,9 +82,11 @@
 
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator{\E}{\mathbb{E}}
 
 \newcommand\given[1][]{\:#1\vert\:}
 \newtheorem{proposition}{Proposition}
+\newcommand{\OPT}{{\rm OPT}}
 
 % New environments
 

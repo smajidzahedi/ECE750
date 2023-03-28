@@ -61,17 +61,17 @@
     \begin{center} \scriptsize
      \begin{game}{2}{2}[$\theta_{11}$: High Cost]
       				\> Enter		\>	Stay out	\\
-      Build			\> $0, -1$	\>	$2, 0$	\\
-      Don't build	\> $2, 1$	\>	$3, 0$
+      Fight			\> $0, -1$	\>	$2, 0$	\\
+      Don't fight	\> $2, 1$	\>	$3, 0$
      \end{game}\hspace{2cm}
      \begin{game}{2}{2}[$\theta_{12}$: Low Cost]
       				\> Enter		\>	Stay out	\\
-      Build			\> $3, -1$	\>	$5, 0$	\\
-      Don't build	\> $2, 1$	\>	$3, 0$
+      Fight			\> $3, -1$	\>	$5, 0$	\\
+      Don't fight	\> $2, 1$	\>	$3, 0$
      \end{game}
     \end{center}
     \vspace{1em}
-    \item $\Theta_1 = \{\theta_{11}, \theta_{1,2}\}$ and $\Theta_2 = \{\theta_{21}\}$
+    \item $\Theta_1 = \{\theta_{11}, \theta_{12}\}$ and $\Theta_2 = \{\theta_{21}\}$
    \end{itemize}  
   \end{frame}
   
@@ -325,7 +325,7 @@
      \begin{game}{4}{4}
       	\> LL			\> LR		\> RL		\> RR		\\
       UU	\> $2,0.5$		\> $1.5,0.75$	\> $0.5,2$	\> $0,2.25$	\\
-      UD	\> $2,0.5$		\> $105,0.75$ 	\> $0.5,2$	\> $0,2.25$	\\
+      UD	\> $2,0.5$		\> $1.5,0.75$ 	\> $0.5,2$	\> $0,2.25$	\\
       DU	\> $0.75,1.5$	\> $0.25,1.75$	\> $2.25,0$	\> $1.75,0.25$	\\
       DD	\> $0.75,1.5$	\> $0.25,1.75$	\> $2.25,0$	\> $1.75,0.25$	\\
      \end{game}
@@ -457,8 +457,8 @@
     \item \alert{[Proposition]} Truthful bidding (i.e., $b_i = v_i$) is BNE in second price auction
     \item \alert{[Proof]} We need to answer following questions
     \begin{itemizes}[0.7em]
-     \item If other bidders bids truthfully, does winner want to change their bid?
-     \item If other bidders bids truthfully, does looser want to change their bid?
+     \item If other bidders bid truthfully, does winner want to change their bid?
+     \item If other bidders bid truthfully, does looser want to change their bid?
     \end{itemizes}
    \end{itemize}
   \end{frame}
@@ -579,7 +579,7 @@
     \item Bidders get private recommendations, $r_1$ and $r_2$
     \item If field is worth \$0, then $r_1=r_2=L$
     \item If field is worth \$25M, then $r_1=H$, $r_2=L$ or $r_1=L$, $r_2=H$ (both equally likely)
-    \item If field is worth \$50M, then $s_1=s_2=H$
+    \item If field is worth \$50M, then $r_1=r_2=H$
     \item Given their private recommendation, how should bidders bid?
    \end{itemize}
   \end{frame}
