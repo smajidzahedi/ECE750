@@ -613,7 +613,7 @@
      \end{itemizes}
      \item With probability 0.5, true value is \$25M
      \begin{itemizes}[0.4em]
-      \item Other bidder bids \$37.7M
+      \item Other bidder bids \$37.5M
       \item Bidder with $L$ loses and gets \$0
      \end{itemizes}
      \item Expected $\text{utility} = 0.5 \times 0.5 \times (-\text{\$12.5M})$
@@ -753,7 +753,7 @@
    \begin{itemizes}[1.5em]
     \item Agents have \alert{beliefs} about which node they are for each information set (\alert{infoset})
     \item For each infoset, $\mu$ defines \alert{prob. distribution} over all nodes in that infoset
-    \item \alert{behavioral strategy}, $s$, maps each infoset prob. distribution over actions
+    \item \alert{behavioral strategy}, $s$, maps each infoset to prob. distribution over actions
    \end{itemizes}
   \end{frame}
   
@@ -809,12 +809,12 @@
     \begin{itemize}
      \item R in A2's left-side infoset is not optimal for any belief of A2
     \end{itemize}
-    \item (M, (L, R)) + believing that A2 takes M with probability 1 is weak PBE
+    \item (M, (L, R)) + believing that A1 takes M with probability 1 is weak PBE
     \begin{itemize}
      \item M is best response to (L, R) and (L, R) is best response to M
-     \item Off-the-path beliefs are \alert{consistent} with the equilibrium strategy
+     \item On-the-path beliefs are \alert{consistent} with the equilibrium strategy
     \end{itemize}
-    \item (M, (L, R)) + believing that A2 takes M with probability 1 is also strong PBE
+    \item (M, (L, R)) + believing that A1 takes M with probability 1 is also strong PBE
     \begin{itemize}
      \item Off-the-path beliefs are also consistent (right-side infoset has single node)
     \end{itemize}
@@ -831,9 +831,9 @@
       \item NE of A2's subgame is (U, R)
       \item (E, U, R) is SPE
       \item (E, U, R) + A3 believing that A2 takes U w.p 1 is PBE (S\&W)
-      \item What about (Q, U, L) + A3 believing that A2 takes R w.p. 1?
-      \item D is best respond to (U, L) and U is dominant strategy
-      \item L is best respond to believing that A2 takes R w.p. 1
+      \item What about (Q, U, L) + A3 believing that A2 takes D w.p. 1?
+      \item Q is best respond to (U, L) and U is dominant strategy
+      \item L is best respond to believing that A2 takes D w.p. 1
       \item So, it is weak PBE, but is it also strong PBE?
       \item No! IV does not hold; A3's belief is \alert{inconsistent} with A2's strategy
      \end{itemize}
@@ -933,8 +933,8 @@
    \vspace{0.5em}
    \begin{itemize}
     \item A3 believes that left and right nodes are reached w.p. $p$ and $1-p$, respectively
-    \item Utility for playing L is $2p$ and $1-p$ for playing R
-    \item A3 must play R if $p < 1/3$, R or L if $p = 1/3$, and L if $p > 1/3$
+    \item Utility for playing L is $4p$ and $p+2(1-p)$ for playing R
+    \item A3 must play R if $p < 2/5$, R or L if $p = 2/5$, and L if $p > 2/5$
    \end{itemize}
   \end{frame}
   
@@ -1285,7 +1285,7 @@
       \item What is A2's posterior belief?
       \begin{itemize}\scriptsize
        \item If Check, Jack w.p. 1
-       \item If Raise, King w.p. $1/(1+x)$ and Jack w.p. $1/(1+x)$
+       \item If Raise, King w.p. $1/(1+x)$ and Jack w.p. $x/(1+x)$
       \end{itemize}
       \item What is A2's best response if A1 Checks?
       \begin{itemize}\scriptsize

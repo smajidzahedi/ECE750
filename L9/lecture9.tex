@@ -147,7 +147,7 @@
      \end{center}}
     \end{column}
    \end{columns}
-   \footnotetext[1]{\scriptsize Aumann ``Subjectivity and correlation in randomized strategies.'' (1974)}
+   \footnotetext[1]{\tiny Aumann, R. J. ``Subjectivity and correlation in randomized strategies.'' 1974}
   \end{frame}
   
   
@@ -219,8 +219,8 @@
     \item What are agents learning about?
     \item Arguably, most plausible answer is strategies of others
     \item \alert{Fictitious} play (FP), one of earliest learning rules, takes this approach
-    \item FB was first introduced by G. W. Brown in 1951%
-    \footnote{Brown, George W. ``Iterative solution of games by fictitious play.''}
+    \item FP was first introduced by G. W. Brown in 1951%
+    \footnote{\tiny Brown, G. W. ``Iterative solution of games by fictitious play.'' 1951}
     \item Brown imagined that agents would \alert{``simulate''} the game in their mind and update their future play based on this simulation; hence name fictitious play
     \item In its current use, FP is misnomer, since each play of the game actually occurs
    \end{itemize}
@@ -304,7 +304,7 @@
     here, abusing notation, $a_{-i}^t$ denotes degenerate probability distribution and:
     $$\alpha = \frac{1}{\sum_{a_{-i}^\prime}\eta_i^t(a_{-i}^\prime)+1}$$
     \item By linearity of expected utility, we have for all $a_i$:
-    $$u_i(a_i,\mu_i^{t+1} = (1-\alpha)u_i(a_i,\mu_i^t)+\alpha u_i(a_i,a_{-i}^*)$$
+    $$u_i(a_i,\mu_i^{t+1}) = (1-\alpha)u_i(a_i,\mu_i^t)+\alpha u_i(a_i,a_{-i}^*)$$
     \item Since $a_i^*$ maximizes both terms, it follows that it is played at $t+1$
    \end{itemize}
   \end{frame}
@@ -518,7 +518,7 @@
   
   \begin{frame}{BRD in Congestion Games}
    \begin{itemize}
-    \item<1-> Consider \alert{potential function}  $\phi:A\rightarrow \mathbb{R}$:
+    \item<1-> Consider \alert{potential function}  $\phi:A\rightarrow \R$:
     $$\phi(a) = \sum_{j=1}^m \sum_{k=1}^{n_j(a)} \ell_j(k)$$
     (Note: \alert{not} social welfare)
     \item<2-> How does $\phi$ change in one round of BRD? Say $i$ switches from $a_i$ to $b_i \in A_i$
@@ -602,9 +602,9 @@
   \begin{frame}{Potential Games}
    \begin{itemize}[<+->]
    \setlength{\itemsep}{1.2em}
-    \item $\phi:A\rightarrow \mathbb{R}_{\geq 0}$ is \alert{exact potential function} for game $G$ if for all $a$, $i$,$a_i$, and $b_i$:
+    \item $\phi:A\rightarrow \R_{\geq 0}$ is \alert{exact potential function} for game $G$ if for all $a$, $i$,$a_i$, and $b_i$:
     $$\phi(b_i, a_{-i}) - \phi(a_i, a_{-i}) = c_i(b_i, a_{-i}) - c_i(a_i,a_{-i})$$
-    \item $\phi:A\rightarrow \mathbb{R}_{\geq 0}$ is \alert{ordinal potential function} for game $G$ if for all $a$, $i$,$a_i$, and $b_i$:
+    \item $\phi:A\rightarrow \R_{\geq 0}$ is \alert{ordinal potential function} for game $G$ if for all $a$, $i$,$a_i$, and $b_i$:
     $$(c_i(b_i, a_{-i}) - c_i(a_i,a_{-i}) < 0) \Rightarrow (\phi(b_i, a_{-i}) - \phi(a_i, a_{-i}) < 0)$$
     (i.e. the change in utility is always equal \alert{in sign} to the change in potential)
     \item BRD is \alert{guaranteed} to converge in game $G$ \alert{iff} $G$ has ordinal potential function
@@ -821,7 +821,7 @@
   
   \begin{frame}{Recall: Minimax Theorem (John von Neumann, 1928)}
    \begin{center}
-    In any finite, two-player, zero-sum game, in any Nash equilibrium\footnotemark{}, each agent receives a payoff that is equal to both their maxmin value and their minmax value
+    In any finite, two-player, zero-sum game, in any NE, each agent receives a payoff that is equal to both their maxmin value and their minmax value
     $$\underset{s_i}{\max} \; \underset{s_{-i}}{\min} \; u_i(s_i,s_{-i}) = \underset{s_{-i}}{\min} \; \underset{s_{i}}{\max} \; u_{i}(s_i,s_{-i})$$
    \end{center}
   \end{frame}
@@ -1211,7 +1211,7 @@
    \begin{itemize}[<+->]
    \setlength{\itemsep}{1.2em}
     \item Littman%
-    \footnote{\scriptsize Littman, Michael L. ``Markov games as a framework for multi-agent reinforcement learning.'' 1994.}
+    \footnote{\tiny Littman, M. L. ``Markov games as a framework for multi-agent reinforcement learning.'' 1994}
     extended Q-learning algorithm to zero-sum stochastic games
     \item Main idea is to modify $Q$-function to consider actions of opponent
     $$Q_{i,t+1}(s_t, a_t) = (1 - \alpha_t)Q_{i,t}(s_t, a_t) + \alpha_t\left(r_i(s_t,a_t) + \delta V_{i,t}(s_{t+1})\right)$$
@@ -1251,12 +1251,85 @@
    \begin{itemize}
    \setlength{\itemsep}{1em}
     \item Hu and Wellman%
-    \footnote{\tiny Hu, Junling, and Wellman, Michael P. ``Multiagent reinforcement learning: theoretical framework and an algorithm." 1998.}
+    \footnote{\tiny Hu, J, and Wellman, M. P. ``Multiagent reinforcement learning: theoretical framework and an algorithm." 1998}
     extended minimax-Q to general-sum games
-    \item Algorithm is structurally identical minimax-Q
-    \item Extension requires that each agent maintain values for all the other agents
+    \item Algorithm is structurally identical to minimax-Q
+    \item Extension requires that each agent maintains values for all other agents
     \item LP to find maxmin value is replaced with quadratic programming to find NE
     \item Nash-Q makes number of very limiting assumptions (e.g., uniqueness of NE)
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Recall: Stochastic Games Model}
+   \begin{itemize}[<+->]
+   \setlength{\itemsep}{1.2em}
+    \item Focus on \alert{stationary Markov strategies} (a mixed strategy per state)
+    \item $\pi_i: S \mapsto \Delta(A_i)$ denotes (mixed) strategy of agent $i$ at state s 
+    \item $\pi = (\pi_1,\dots,\pi_n)$ denotes strategy profile of all agents
+    \item \alert{Expected utility (value) function} of agent $i$ is
+    $$v_i(s,\pi) \defeq \E_{a_k\sim \pi(s_k)}\left[\sum_{k=0}^{\infty}\delta^k r_i(s_k,a_k)\given s_0 = s\right]$$
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Equilibrium Characterization}
+   \begin{itemize}[<+->]
+    \item Equilibrium \alert{value function} is defined using \alert{one-stage deviation} principle (\alert{multi-agent} extension of \alert{Bellman's equation}) as
+    $$v_i(s,\pi^*) = \underset{\pi_i}{\max}\;\E_{a\sim (\pi_i,\pi_{-i}^*(s))}\left[r_i(s, a) + \delta \sum_{s^\prime\in S}p(s, a, s^\prime) v_i(s^\prime, \pi^*)\right]$$
+    \item \alert{Q-function} is defined as
+    $$Q_i(s,a,\pi^*) = r_i(s, a) + \delta \sum_{s^\prime\in S}p(s, a, s^\prime) v_i(s^\prime, \pi^*)$$
+    \item Recursion is then defined as
+    $$v_i(s, \pi^*) = \underset{\pi_i}{\max}\;\E_{a\sim (\pi_i,\pi_{-i}^*(s))}\left[Q_i(s,a,\pi^*)\right]$$
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{FP for Model-based Learning}
+   \begin{itemize}[<+->]\small
+   \setlength{\itemsep}{1em}
+    \item Consider learning dynamic that combines FP with value-function (or Q-function) iteration
+    \item Agents form beliefs on opponent strategies (using empirical frequencies and assuming opponent uses stationary strategy)
+    \item Agents also form beliefs about \alert{equilibrium} value function, or Q-function
+    \item Agents then choose best response action in \alert{auxiliary game} given their beliefs (where payoffs are given by Q-function estimates)
+    \item Key challenge is that payoffs or value functions in these auxiliary games are \alert{non-stationary} (unlike repeated play of stage games)
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{FP for Model-based Learning: Model}
+   \begin{itemize}[<+->]\small
+    \item At time $t$, $i$'s belief on $-i$'s strategy is $\mu^t_{i}$ and on own Q-function is
+    $$Q_i^t \defeq \E_{a_{-i}\sim \mu_{i}^t(s)}[Q_i^t(s,a_i,a_{-i})]$$
+    \item Agent $i$ selects best response $a^t_i(s) \in \argmax_{a_i} Q_i^t(s,a_i,\mu_{i}^t(s))$
+    \item Agent $i$ updates $\mu_i$ as 
+    $$\mu_i^{t+1}(s) = (1-\alpha_t)\mu_i^t(s) + \alpha_t a_{-i}^t(s)$$
+    \item Agent $i$ updates $Q_i$ as
+    $$Q_i^{t+1}(s,a) = (1-\beta_t)Q_i^t(s,a)+\beta_t\left(r_i(s, a) + \delta \sum_{s^\prime\in S}p(s, a, s^\prime) v_i^t(s^\prime)\right)$$
+    where $v_i^t(s^\prime) = \max_{a_i}Q_i^t(s^\prime,a_i,	\mu_i^t(s))$
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Two-timescale Learning Framework}
+   \begin{itemize}[<+->]\small
+   \setlength{\itemsep}{1.2em}
+    \item Beliefs on Q-functions are updated at slower rate than beliefs on opponent strategies
+    \item This postulate agents' choices to be more dynamic than changes in their preferences
+    \item Q-functions in auxiliary games can be viewed as slowly evolving agent preferences
+    \item This enables weakening the dependence between evolving strategies and Q-functions
+   \end{itemize}
+  \end{frame}
+  
+  
+  \begin{frame}{Convergence of Two-timescale Learning Framework}
+   \begin{itemize}
+   \setlength{\itemsep}{1em}
+    \item If each state is visited \alert{infinitely} many times
+    \item And, if $\lim_{k\to \infty} \alpha_k = \lim_{k\to \infty} \beta_k = 0$ and $\sum_k \alpha_k = \sum_k \beta_k = \infty$
+    \item And, if $\lim_{k\to \infty} \beta_k / \alpha_k = 0$ (two-timescale learning: $\beta_k \to 0$ faster than $\alpha_k \to 0$)
+    \item Then $Q$ and $\mu$ converge to NE value and strategy in zero-sum stochastic games
+    \item They also converge to NE value for single-controller stochastic games
    \end{itemize}
   \end{frame}
   
