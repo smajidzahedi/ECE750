@@ -25,7 +25,7 @@
      \item Suppose $O = \{o_1, o_2, o_3\}$
      \item Let $A = 0.2 o_1 + 0.8 o_2$ and $B = 0.4 o_2 + 0.6 o_3$
      \item $C = 0.5 A + 0.5 B$ is a compound lottery:
-      $$C = 0.5(0.2 o_1  + 0.8 o_2) + 0.5(0.4 o_2 + 0.6 o_3) = 0.1 o_1 + 0.6 o_2 + 0.3 o_3$$
+      \[C = 0.5(0.2 o_1  + 0.8 o_2) + 0.5(0.4 o_2 + 0.6 o_3) = 0.1 o_1 + 0.6 o_2 + 0.3 o_3\]
     \end{itemize}
    \end{itemize}
   \end{frame}
@@ -102,26 +102,30 @@
     \item If agent is indifferent between all outcomes, then set $u(o) = 0$ for all outcomes $o$
     \item Otherwise, there must be most-preferred and least-preferred outcomes, $\overline{o}$ and $\underline{o}$
     \item Set $u(o_k)$ to be $p_k$ such that $o_k \sim p_k\overline{o}+(1-p_k)\underline{o}$ (by \alert{continuity})
-    \item \textbf{Part I}. Show $u(\sum p_k o_k) = \sum p_k u(o_k)$
+    \item \textbf{Part I}.
+    Show $u\left(\sum p^\prime_k o_k\right) = \sum p^\prime_k u(o_k)$
     \begin{itemize}[<.(1)->]
      \item Replace $o_k$ by $u(o_k)\overline{o}+(1-u(o_k))\underline{o}$ (by \alert{independence})
-      $$A = \sum p_k o_k \sim \left(\sum p_k u(o_k)\right) \overline{o} + \left(1-\sum p_k u(o_k)\right)\underline{o}$$
+      \[A = \sum p^\prime_k o_k \sim \left(\sum p^\prime_k u(o_k)\right) \overline{o} + \left(1-\sum p^\prime_k u(o_k)\right)\underline{o}\]
      \item This is a lottery on $\overline{o}$ and $\underline{o}$
      \item By the definition of $u$, we conclude
-       $$u(A) = u\left(\sum p_k o_k\right) = \sum p_k u(o_k)$$ 
+       \[u(A) = u\left(\sum p^\prime_k o_k\right) = \sum p^\prime_k u(o_k)\]
     \end{itemize}
    \end{itemize}
   \end{frame}
   
   \begin{frame}{von Neumann-Morgenstern Utility (Proof Sketch)}
    \begin{itemize}[<+->]
-    \item \textbf{Part II}. Show $u(A) \ge u(B) \Longrightarrow A \succeq B$
+    \item \textbf{Part II}.
+    Show $u(A) \ge u(B) \Longrightarrow A \succeq B$
     \begin{itemize}[<.(1)->]
      \item $A \sim u(A)\overline{o} + (1-u(A))\underline{o}$ and $B \sim u(B)\overline{o} + (1-u(B))\underline{o}$
      \item If $u(A) = u(B)$, then $A$ and $B$ define identical lotteries
-     \item If $u(A) > u(B)$, then by \alert{monotonicity}, we have $$A \sim u(A)\overline{o} + (1-u(A))\underline{o} \succ u(B)\overline{o} + (1-u(B))\underline{o} \sim B$$
+     \item If $u(A) > u(B)$, then by \alert{monotonicity}, we have
+     \[A \sim u(A)\overline{o} + (1-u(A))\underline{o} \succ u(B)\overline{o} + (1-u(B))\underline{o} \sim B\]
     \end{itemize}
-    \item \textbf{Part III}. Show $A \succeq B \Longrightarrow u(A) \ge u(B)$
+    \item \textbf{Part III}.
+    Show $A \succeq B \Longrightarrow u(A) \ge u(B)$
     \begin{itemize}[<.(1)->]
      \item If $u(A) < u(B)$, then by (Part II), $B \succ A$
      \item By \alert{completeness}, this is a contradiction
