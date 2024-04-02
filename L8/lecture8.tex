@@ -1,5 +1,5 @@
-\documentclass[11pt,aspectratio=169]{beamer}
-%\documentclass[11pt,aspectratio=169,handout]{beamer}
+%\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
 
 \input{../Macros/main}
 \subtitle{\vspace{2.1em}Lecture 8: Bayesian Games}
@@ -288,8 +288,8 @@
     \vspace{1em}
     \begin{align*}
      EU_2(UD,LR) = \; & \sum_{\theta\in\Theta}p(\theta)EU_2(UD,LR,\theta) \\     
-     \visible<2->{= \; & p(\theta_{11},\theta_{2,1})u_2(U,L,\theta_{11},\theta_{2,1}) + p(\theta_{11},\theta_{2,2})u_2(U,R,\theta_{11},\theta_{2,2}) + \\[0.5em]
-     & p(\theta_{12},\theta_{2,1})u_2(D,L,\theta_{12},\theta_{2,1}) + p(\theta_{12},\theta_{2,2})u_2(D,R,\theta_{12},\theta_{2,2})\\[0.5em]
+     \visible<2->{= \; & p(\theta_{11},\theta_{21})u_2(U,L,\theta_{11},\theta_{21}) + p(\theta_{11},\theta_{22})u_2(U,R,\theta_{11},\theta_{22}) + \\[0.5em]
+     & p(\theta_{12},\theta_{21})u_2(D,L,\theta_{12},\theta_{21}) + p(\theta_{12},\theta_{22})u_2(D,R,\theta_{12},\theta_{22})\\[0.5em]
      = \; & 0.3 \times 0 + 0.1 \times 3 + 0.2 \times 0 + 0.4 \times 2 = 1.1}
     \end{align*}
    \end{center}
@@ -551,7 +551,8 @@
    \begin{itemize}
     \item Expected payment of bidder $i$ with value $v_i$ is:
      \begin{align*}
-      p(v_i)&=P(v_i\text{ wins})\times \beta(v_i)\\[0.8em]
+      p(v_i)&=P(\beta(v_i)\text{ wins})\times \beta(v_i)\\[0.8em]
+      &=P(\beta(y_i) \le \beta(v_i))\times \mathbb{E}[y_i\given y_i\le v_i]\\
       &=P(y_i\le v_i)\times \mathbb{E}[y_i\given y_i\le v_i]\\
       &=G_{y_i}(v_i)\times G_{y_i}(v_i)^{-1}\int_0^{v_i}yg_{y_i}(y)dy =\int_0^{v_i}yg_{y_i}(y)dy
      \end{align*}
