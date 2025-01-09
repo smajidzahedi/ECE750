@@ -1,5 +1,5 @@
-\documentclass[11pt,aspectratio=169]{beamer}
-%\documentclass[11pt,aspectratio=169,handout]{beamer}
+%\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=169,handout]{beamer}
 
 \input{../Macros/main}
 \subtitle{\vspace{2.1em}Lecture 9: Learning in Games}
@@ -525,7 +525,7 @@
     \item<3->Well... We know it must have decreased agent $i$'s cost:
     \begin{eqnarray*}
      \Delta c_i & \equiv & c_i(b_i, a_{-i}) - c_i(a_i, a_{-i}) \\ 
-     & = & \sum_{j \in b_i\setminus a_i}\ell_j(n_j(a)+1) - \sum_{j \in a_i \setminus b_i}\ell_j(n_j(s)) < 0
+     & = & \sum_{j \in b_i\setminus a_i}\ell_j(n_j(a)+1) - \sum_{j \in a_i \setminus b_i}\ell_j(n_j(a)) < 0
     \end{eqnarray*}
    \end{itemize}
   \end{frame}
@@ -537,7 +537,7 @@
     \item Change in potential is:
     \begin{eqnarray*}
      \Delta\phi & \equiv & \phi(b_i, a_{-i}) - \phi(a_i, a_{-i}) \\
-     & = & \sum_{j \in b_i\setminus a_i}\ell_j(n_j(a)+1) - \sum_{j \in a_i \setminus b_i}\ell_j(n_j(s)) \\
+     & = & \sum_{j \in b_i\setminus a_i}\ell_j(n_j(a)+1) - \sum_{j \in a_i \setminus b_i}\ell_j(n_j(a)) \\
      & = & \Delta c_i
     \end{eqnarray*}
     \item Since $\phi$ can take on only finitely many values, this cannot go on forever
