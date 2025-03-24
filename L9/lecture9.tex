@@ -95,10 +95,10 @@
     \item $\eta_i^1$ represents \alert{fictitious past} and cannot be zero for all $a_{-i}$
     \item Agents assume that their opponent is using \alert{stationary mixed strategy}
     \item Agents \alert{update their beliefs} about this strategy at each step according to:
-    $$\mu_i^t(a_{-i})=\frac{\eta_i^t(a_{-i})}{\sum_{a_{-i}^\prime}\eta_i^t(a_{-i}^\prime)}$$
+    \[\mu_i^t(a_{-i})=\frac{\eta_i^t(a_{-i})}{\sum_{a_{-i}^\prime}\eta_i^t(a_{-i}^\prime)}\]
     \item $\mu_i^t$ is \alert{empirical distribution} of past actions and is treated as mixed strategy
     \item Agents best-respond to their beliefs about opponent' strategy
-    $$a_i^{t+1}=\underset{a_i}{\argmax}~u_i(a_i,\mu_i^t)$$
+    \[a_i^{t+1}=\underset{a_i}{\argmax}~u_i(a_i,\mu_i^t)\]
    \end{itemize}
   \end{frame}
   
@@ -178,7 +178,7 @@
     \item In FP, agents only play pure strategies and pure-strategy NE may not exist
     \item While FP sequence may not converge, its empirical distribution may
     \item Sequence $\{a^t\}$ converges to $s^*$ in time-average sense if for all $i$ and $a_i$:
-    $$\lim_{T\to\infty}\frac{\sum_{t=1}^{T}\mathds{1}(a_i^t=a_i)}{T} = s^*_i(a_i)$$
+    \[\lim_{T\to\infty}\frac{\sum_{t=1}^{T}\mathds{1}(a_i^t=a_i)}{T} = s^*_i(a_i)\]
     $\mathds{1}(\cdot)$ denotes the indicator function
     \item If FP sequence converges to $s^*$ in the time-average sense, then $s^*$ is NE
    \end{itemize}
@@ -312,7 +312,7 @@
    \begin{itemize}[<+->]
    \setlength{\itemsep}{0.7em}
     \item Instead of best-responding to beliefs, agents respond randomly, but somewhat proportional to their expected utility
-    $$s_i^t(a_i \given \mu_i^t) = \frac{\exp(u_i(a_i,\mu_i^t)/\gamma)}{\sum_{a_i^\prime}\exp(u_i(a_i^\prime,\mu_i^t)/\gamma)}$$
+    \[s_i^t(a_i \given \mu_i^t) = \frac{\exp(u_i(a_i,\mu_i^t)/\gamma)}{\sum_{a_i^\prime}\exp(u_i(a_i^\prime,\mu_i^t)/\gamma)}\]
     \item $\gamma$ is called the \alert{smoothing} parameter
     \item This is called \alert{soft-max} policy
     \item Soft-max policy respects best replies, but leaves room for \alert{exploration}
@@ -380,7 +380,7 @@
   \begin{frame}{BRD in Congestion Games}
    \begin{itemize}
     \item<1-> Consider \alert{potential function}  $\phi:A\rightarrow \R$:
-    $$\phi(a) = \sum_{j=1}^m \sum_{k=1}^{n_j(a)} \ell_j(k)$$
+    \[\phi(a) = \sum_{j=1}^m \sum_{k=1}^{n_j(a)} \ell_j(k)\]
     (Note: \alert{not} social welfare)
     \item<2-> How does $\phi$ change in one round of BRD? Say $i$ switches from $a_i$ to $b_i \in A_i$
     \item<3->Well... We know it must have decreased agent $i$'s cost:
@@ -393,7 +393,7 @@
   
   
   \begin{frame}{BRD in Congestion Games (cont.)}
-   $$\phi(a) = \sum_{j=1}^m \sum_{k=1}^{n_j(a)} \ell_j(k)$$
+   \[\phi(a) = \sum_{j=1}^m \sum_{k=1}^{n_j(a)} \ell_j(k)\]
    \begin{itemize}[<+->]
     \item Change in potential is:
     \begin{eqnarray*}
@@ -432,7 +432,7 @@
   \begin{frame}{BRD in Load Balancing Games on Identical Servers}
    \begin{itemize}
     \item Consider \alert{potential function} $\phi$ as:
-    $$\phi(a) = \frac{1}{2}\sum_{j=1}^m\ell_j(a)^2$$
+    \[\phi(a) = \frac{1}{2}\sum_{j=1}^m\ell_j(a)^2\]
     \item Suppose $i$ switches from server $j$ to server $j'$:
     \begin{eqnarray*}
      \Delta c_i(a) & \equiv & c_i(j', a_{-i}) - c_i(j, a_{-i}) \\ \pause
@@ -464,9 +464,9 @@
    \begin{itemize}[<+->]
    \setlength{\itemsep}{1.2em}
     \item $\phi:A\rightarrow \R_{\geq 0}$ is \alert{exact potential function} for game $G$ if for all $a$, $i$,$a_i$, and $b_i$:
-    $$\phi(b_i, a_{-i}) - \phi(a_i, a_{-i}) = c_i(b_i, a_{-i}) - c_i(a_i,a_{-i})$$
+    \[\phi(b_i, a_{-i}) - \phi(a_i, a_{-i}) = c_i(b_i, a_{-i}) - c_i(a_i,a_{-i})\]
     \item $\phi:A\rightarrow \R_{\geq 0}$ is \alert{ordinal potential function} for game $G$ if for all $a$, $i$,$a_i$, and $b_i$:
-    $$(c_i(b_i, a_{-i}) - c_i(a_i,a_{-i}) < 0) \Rightarrow (\phi(b_i, a_{-i}) - \phi(a_i, a_{-i}) < 0)$$
+    \[(c_i(b_i, a_{-i}) - c_i(a_i,a_{-i}) < 0) \Rightarrow (\phi(b_i, a_{-i}) - \phi(a_i, a_{-i}) < 0)\]
     (i.e. the change in utility is always equal \alert{in sign} to the change in potential)
     \item BRD is \alert{guaranteed} to converge in game $G$ \alert{iff} $G$ has ordinal potential function
    \end{itemize}
@@ -617,7 +617,7 @@
     \item So: $W^{t+1} \leq (3/4)W^t$
     \item If algorithm makes $M$ mistakes, $W^T \leq N\cdot(3/4)^M$
     \item Let $i^*$ be the best expert, $W^T > w_i^T = (1/2)^{\OPT}$, which gives:
-    $$(1/2)^{\OPT} \leq W \leq N(3/4)^M \Rightarrow (4/3)^M \leq N\cdot 2^\OPT \Rightarrow M \leq 2.4(\OPT + \log(N))$$
+    \[(1/2)^{\OPT} \leq W \leq N(3/4)^M \Rightarrow (4/3)^M \leq N\cdot 2^\OPT \Rightarrow M \leq 2.4(\OPT + \log(N))\]
     \item Algorithm makes at most $2.4\left(\OPT + \log(N)\right)$ mistakes
     \item $\log(N)$ is constant, so ratio of mistakes to $\OPT$ is $2.4$ in limit -- not great, but not bad
    \end{itemize}
@@ -627,7 +627,6 @@
   \begin{frame}{What Do We Want in an Algorithm?}
    \begin{itemizes}[1.5em]
     \item Make only 1$\times$ as many mistakes as $\OPT$ in limit, rather than 2.4$\times$
-    \item Handle $N$ distinct actions (separate action for each expert), not just up and down
     \item Handle arbitrary costs in $[0,1]$ per expert per round, not just right and wrong
    \end{itemizes}
   \end{frame}
@@ -670,9 +669,9 @@
   \begin{frame}{Multiplicative Weights Algorithm: Discussion}
    \begin{itemize}[<+->]
     \item For any sequence of losses, and any expert $k$:
-    $$\frac{1}{T}~\E[L_{MW}^T] \leq \frac{1}{T}~L_k^T + \epsilon + \frac{\ln(N)}{\epsilon\cdot T}$$
+    \[\frac{1}{T}~\E[L_{MW}^T] \leq \frac{1}{T}~L_k^T + \epsilon + \frac{\ln(N)}{\epsilon\cdot T}\]
     \item In particular, setting $\epsilon = \sqrt{\ln(N)/T}$:
-    $$\frac{1}{T}~\E[L_{MW}^T] \leq \frac{1}{T}~\min_k L_k^T + 2\sqrt{\frac{\ln(N)}{T}}$$
+    \[\frac{1}{T}~\E[L_{MW}^T] \leq \frac{1}{T}~\min_k L_k^T + 2\sqrt{\frac{\ln(N)}{T}}\]
     \item Average loss quickly approaches that of best expert \alert{exactly}, at rate of $1/\sqrt{T}$
     \item This works for \alert{arbitrary} sequence of losses (e.g., chosen adaptively by adversary)
     \item So we could us it to play games (\alert{experts $\leftrightarrow$ actions} and \alert{losses $\leftrightarrow$ costs})
@@ -683,7 +682,7 @@
   \begin{frame}{Recall: Minimax Theorem (John von Neumann, 1928)}
    \begin{center}
     In any finite, two-player, zero-sum game, in any NE, each agent receives a payoff that is equal to both their maxmin value and their minmax value
-    $$\underset{s_i}{\max} \; \underset{s_{-i}}{\min} \; u_i(s_i,s_{-i}) = \underset{s_{-i}}{\min} \; \underset{s_{i}}{\max} \; u_{i}(s_i,s_{-i})$$
+    \[\underset{s_i}{\max} \; \underset{s_{-i}}{\min} \; u_i(s_i,s_{-i}) = \underset{s_{-i}}{\min} \; \underset{s_{i}}{\max} \; u_{i}(s_i,s_{-i})\]
    \end{center}
   \end{frame}
   
@@ -706,11 +705,11 @@
   \begin{frame}{Simple Proof for Minimax Theorem (cont.)}
    \begin{itemize}[<+->]\small
     \item For A2's MW algorithm, we have:
-    $$\frac{1}{T} \sum_{t=1}^T \E[u_1(a_1^t,a_2^t)] \le \frac{1}{T} \min_{a_2} \sum_{t=1}^T u_1(a_1^t,a_2) + 2\sqrt{\frac{\log n}{T}}$$
+    \[\frac{1}{T} \sum_{t=1}^T \E[u_1(a_1^t,a_2^t)] \le \frac{1}{T} \min_{a_2} \sum_{t=1}^T u_1(a_1^t,a_2) + 2\sqrt{\frac{\log n}{T}}\]
     \item Let $\bar{s}_1$ be mixed strategy that puts weight $1/T$ on each action $a_1^t$, we have:
-    $$\frac{1}{T} \min_{a_2} \sum_{t=1}^T u_1(a_1^t,a_2) = \min_{a_2} \sum_{t=1}^T \frac{1}{T} u_1(a_1^t,a_2) = \min_{a_2} u_1(\bar{s}_1, a_2)$$
+    \[\frac{1}{T} \min_{a_2} \sum_{t=1}^T u_1(a_1^t,a_2) = \min_{a_2} \sum_{t=1}^T \frac{1}{T} u_1(a_1^t,a_2) = \min_{a_2} u_1(\bar{s}_1, a_2)\]
     \item By definition, we have: $\min_{a_2} u_1(\bar{s}_1, a_2) \le \max_{s_1} \min_{a_2} u_1(s_1, a_2) = v_2$, and so:
-    $$\frac{1}{T} \sum_{t=1}^T \E[u_1(a_1^t,a_2^t)] \le v_2 + 2\sqrt{\frac{\log n}{T}}$$
+    \[\frac{1}{T} \sum_{t=1}^T \E[u_1(a_1^t,a_2^t)] \le v_2 + 2\sqrt{\frac{\log n}{T}}\]
    \end{itemize}
   \end{frame}
   
@@ -727,16 +726,83 @@
     \item Taking $T$ large enough leads to contradiction
    \end{itemize}
   \end{frame}
-  
+
+ \begin{frame}{Incomplete Feedback}
+  \begin{itemize}[<+->]
+   \item The MW algorithm is simple, elegant, and offers strong regret guarantees
+   \item However, it relies on \alert{restrictive} assumption
+   \item The algorithm has to observe loss of \alert{all} experts at every round
+   \item Unfortunately, this assumption does not hold in many setting
+   \item More realistic assumption is that \alert{only} the loss of \alert{selected expert} is observed
+  \end{itemize}
+ \end{frame}
+
+
+ \begin{frame}{Exp3 Algorithm}
+  \begin{algorithm*}[H]
+    Set $u \gets (1/N, \dots, 1/N)$\;
+    Set weights $w_i^1 \gets 1$ for all experts $i$\;
+    \For{$t = 1$ to $T$}{
+     Let $W^t = \sum_{i=1}^N w_i^t$\;
+     Calculate $p_i^t \gets w_i^t/W^t$ for all $i$\;
+     Calculate probabilities: $q^t = (1-\gamma) p^t + \gamma u$\;
+     Choose expert $i_t$ randomly according to $q^t$\;
+     Observe expert $i_t$'s loss $\ell_{i_t}^t$\;
+     Set other experts losses: $\ell_i^t \gets 0$ for all $i \ne i_t$\;
+     Calculate scaled loesss: $\hat{\ell}_i^t \gets \ell_i^t/q_i^t$ for all $i$\;
+     Update weights: $w_i^{t+1} \gets w_i^t \cdot \exp(-\epsilon \hat{\ell}_i^t)$ for all $i$\;
+    }
+  \end{algorithm*}
+ \end{frame}
+
+   \begin{frame}{Exp3 Algorithm}
+   \begin{center}
+    \begin{tikzpicture}[x=1.75cm,y=1cm,font=\footnotesize]
+     \draw[rounded corners, line width=1.5pt] (0, 0) rectangle (3, 4);
+     \draw[line width=1pt, fill=lightblue] (0.5, 0.5) rectangle (1, 3.5);
+     \draw[line width=1pt, fill=lightgreen] (2, 0.5) rectangle (2.5, 3.5) node[pos=.5] {$MW$};
+
+     \draw[-stealth, black, thick] (-1,1.75) -- node[below] {$\ell^t$} (0.5, 1.75);
+     \draw[stealth-, black, thick] (-1,2.25) -- node[above] {$q^t$} (0.5 , 2.25);
+
+     \draw[-stealth, black, thick] (1,1.75) -- node[below] {$\hat{\ell}^t$} (2, 1.75);
+     \draw[stealth-, black, thick] (1,2.25) -- node[above] {$p^t$} (2, 2.25);
+
+     \end{tikzpicture}
+   \end{center}
+  \end{frame}
+
+
+ \begin{frame}{Analysis of Exp3}
+  \begin{itemize}[<+->]
+   \item $\E[\hat{\ell}_i^t] = \ell_i^t / q_i^t \cdot q_i^t + 0 \cdot (1 - q_i^t) = \ell_i^t$
+   \item True loss is in $[0, 1]$, but $MW$ sees losses in $[0, N/\gamma]$
+   \item From analysis of MW, we have:
+   \[\frac{1}{T}~\E_{p}[\hat{L}_{MW}^T] \leq \frac{1}{T}~\hat{L}_k^T + \frac{N}{\gamma}\left(\epsilon + \frac{\ln(N)}{\epsilon\cdot T}\right)\]
+   \item Taking expectation over both sides, we have:
+   \[\frac{1}{T}~\E_{p}[L_{MW}^T] \leq \frac{1}{T}~L_k^T + \frac{N}{\gamma}\left(\epsilon + \frac{\ln(N)}{\epsilon\cdot T}\right)\]
+  \end{itemize}
+ \end{frame}
+
+  \begin{frame}{Analysis of Exp3 (cont.)}
+  \begin{itemize}[<+->]
+   \item We make decisions based on $q$ not $p$:
+   \begin{align*}
+    \frac{1}{T}~\E_{q}[L_{MW}^T] &= \frac{(1-\gamma)}{T}~\E_{p}[L_{MW}^T] + \frac{\gamma}{TN}\sum_i L_i^T\\
+    &\le \frac{1}{T}~L_k^T + \frac{N}{\gamma}\left(\epsilon + \frac{\ln(N)}{\epsilon\cdot T}\right) + \gamma
+   \end{align*}
+   \item Setting $\epsilon = \sqrt{\ln(N)/T}$ and $\gamma = \sqrt{N}\left(\ln(N)/T\right)^{1/4}$ gives regret of $\approx N^{1/4}T^{3/4}$
+  \end{itemize}
+ \end{frame}
   
   \begin{frame}{External Regret}
    \begin{itemize}[<+->]
     \item Sequence $a^1,\dots,a^T$ has \alert{external regret} of $\Delta(T)$ if for every agent $i$ and action $a_i^\prime$:
-    $$\frac{1}{T}\sum_{t=1}^T u_i(a^t) \geq \frac{1}{T} \sum_{t=1}^T u_i(a_i^\prime,a_{-i}) - \Delta(T)$$
+    \[\frac{1}{T}\sum_{t=1}^T u_i(a^t) \geq \frac{1}{T} \sum_{t=1}^T u_i(a_i^\prime,a_{-i}) - \Delta(T)\]
     \item If $\Delta(T) = o_T(1)$, we say that sequence of action profiles has \emph{no} external regret
     \item External regret measures regret to the best \alert{fixed} action in hindsight
     \item If $a^1,\dots,a^T$ has $\epsilon$ external regret, then distribution $\pi$ that puts weight $1/T$ on each $a^t$ (i.e., empirical distribution of actions) forms \alert{$\epsilon$-approximate CCE}
-    $$\E_{a\sim \pi}[u_i(a)] = \frac{1}{T}\sum_{t=1}^T u_i(a^t) \ge \frac{1}{T}\sum_{t=1}^T u_i(a_i^\prime,a_{-i}) - \epsilon = \E_{a\sim \pi}[u_i(a_i^\prime, a_{-i})] - \epsilon$$
+    \[\E_{a\sim \pi}[u_i(a)] = \frac{1}{T}\sum_{t=1}^T u_i(a^t) \ge \frac{1}{T}\sum_{t=1}^T u_i(a_i^\prime,a_{-i}) - \epsilon = \E_{a\sim \pi}[u_i(a_i^\prime, a_{-i})] - \epsilon\]
    \end{itemize}
   \end{frame}
   
@@ -755,7 +821,7 @@
   \begin{frame}{Swap Regret}
    \begin{itemize}[<+->]\small
     \item Sequence $a^1,\dots,a^T$ has \alert{swap regret} of $\Delta(T)$ if for every agent $i$ and every \alert{switching function} $F_i:A_i\rightarrow A_i$:
-    $$\frac{1}{T}\sum_{t=1}^T u_i(a^t) \geq \frac{1}{T} \sum_{t=1}^T u_i(F_i(a_i),a_{-i}) - \Delta(T)$$
+    \[\frac{1}{T}\sum_{t=1}^T u_i(a^t) \geq \frac{1}{T} \sum_{t=1}^T u_i(F_i(a_i),a_{-i}) - \Delta(T)\]
     \item If $\Delta(T) = o_T(1)$, we say that sequence of action profiles has no swap regret
     \item This measures regret to counterfactual case where every action of particular type is swapped with different action in hindsight, separately for each action
     \item E.g., ``Every time $i$ bought Microsoft, $i$ should have bought Apple, and every time $i$ bought Google, $i$ should have bought Comcast.''
@@ -767,12 +833,12 @@
   \begin{frame}{Generalization}
    \begin{itemize}[<+->]
     \item For any agent $i$, $F_i$, and $a \in A$, define \alert{regret} as:
-    $$\textrm{Regret}_i(a,F_i) = u_i(F_i(a_i), a_{-i}) - u_i(a)$$
+    \[\textrm{Regret}_i(a,F_i) = u_i(F_i(a_i), a_{-i}) - u_i(a)\]
     \item $F_i$ is \alert{constant} switching function if $F_i(a_i) = F_i(a_i')$ for all $a_i,a_i' \in A_i$
     \item $\pi$ is CCE if for every agent $i$ and every constant switching function $F_i$:
-    $$\E_{a \sim \pi}[\textrm{Regret}_i(a, F_i)] \leq 0$$
+    \[\E_{a \sim \pi}[\textrm{Regret}_i(a, F_i)] \leq 0\]
     \item $\pi$ is CE if for every agent $i$ and every switching function $F_i$:
-    $$\E_{a \sim \pi}[\textrm{Regret}_i(a, F_i)] \leq 0$$
+    \[\E_{a \sim \pi}[\textrm{Regret}_i(a, F_i)] \leq 0\]
    \end{itemize}
   \end{frame}
   
@@ -780,9 +846,9 @@
   \begin{frame}{How to Achieve No Swap Regret}
    \begin{itemize}[<+->]
     \item Define set of time steps that expert $j$ is selected:
-    $$S_j = \{t : a_t = j\}$$
+    \[S_j = \{t : a_t = j\}\]
     \item Observation: To achieve no swap regret it would be sufficient that for every $j$:
-    $$\frac{1}{|S_j|}\sum_{t \in S_j}\ell^t_{a_t} \leq \frac{1}{|S_j|}\min_i \sum_{t\in S_j}\ell^t_i + \Delta(T)$$
+    \[\frac{1}{|S_j|}\sum_{t \in S_j}\ell^t_{a_t} \leq \frac{1}{|S_j|}\min_i \sum_{t\in S_j}\ell^t_i + \Delta(T)\]
     \item No \alert{swap} regret = no \alert{external} regret separately on each sequence of actions $S_j$
     \item Best switching function in hindsight = swapping each action $j$ for best fixed action in hindsight over $S_j$
     \item Idea: Run $k$ copies of PW, one responsible for each $S_j$
@@ -871,13 +937,13 @@
     \end{equation}
     \item Right-hand side is equal to (\ref{equ:2})
     \item For left-hand side to be equal to (\ref{equ:1}), we need:
-    $$p_i^t = \sum_{j=1}^k p_j^t\cdot q(j)^t_i$$
+    \[p_i^t = \sum_{j=1}^k p_j^t\cdot q(j)^t_i\]
    \end{itemize}
   \end{frame}
   
   
   \begin{frame}{Combining Distributions}
-   $$p_i^t = \sum_{j=1}^k p_j^t\cdot q(j)^t_i$$
+   \[p_i^t = \sum_{j=1}^k p_j^t\cdot q(j)^t_i\]
    \begin{itemize}[<+->]
    \setlength{\itemsep}{0.7em}
     \item These might be familiar as those defining \alert{stationary distribution} of \alert{Markov chain}
@@ -901,7 +967,7 @@
     \item $\alpha^t(a)$: Average per-period reward that would have been received up until time $t$ had pure strategy $a$ was played by agent, assuming others played the same
     \item \alert{Regret} at time $t$ for not having played $a$: $R^t(a) = \alpha^t(a) - \alpha^t$
     \item \alert{Regret matching}: At time $t$, choose action $a$ w.p. proportional to its regret:
-    $$s^{t}(a) = \frac{R^t(a)^{+}}{\sum_{a^\prime}R^t(a^\prime)^{+}}$$
+    \[s^{t}(a) = \frac{R^t(a)^{+}}{\sum_{a^\prime}R^t(a^\prime)^{+}}\]
    \end{itemize}
   \end{frame}
   
@@ -953,7 +1019,7 @@
    \begin{itemize}[<+->]
    \setlength{\itemsep}{1.2em}
     \item Simplified \alert{Bellman updates} calculate V and Q for a fixed policy
-    $$V^\pi_{t}(s) \leftarrow \sum_{s^\prime}p(s, \pi(s), s^\prime) \left(r(s, \pi(s), s^\prime) + \delta V^\pi_{t-1}(s^\prime)\right)$$
+    \[V^\pi_{t}(s) \leftarrow \sum_{s^\prime}p(s, \pi(s), s^\prime) \left(r(s, \pi(s), s^\prime) + \delta V^\pi_{t-1}(s^\prime)\right)\]
     \item This approach fully exploited connections between the states
     \item Unfortunately, we need $p$ and $r$ to do it!
    \end{itemize}
@@ -1008,7 +1074,7 @@
   \begin{frame}{Q-learning}
    \begin{itemize}[<+->]
     \item Q-Learning is sample-based Q-value iteration
-    $$Q_{t}(s, a) \leftarrow \sum_{s^\prime}p(s, a, s^\prime) \left(r(s, a, s^\prime) + \delta \; \underset{a^\prime\in A}{\max} \; Q_{t-1}(s^\prime, a^\prime)\right)$$
+    \[Q_{t}(s, a) \leftarrow \sum_{s^\prime}p(s, a, s^\prime) \left(r(s, a, s^\prime) + \delta \; \underset{a^\prime\in A}{\max} \; Q_{t-1}(s^\prime, a^\prime)\right)\]
     \item We learn $Q(s,a)$ values as we go
     \begin{eqnarray*}
      &\text{Sample}: & r(s, a, s^\prime) + \delta \; \underset{a^\prime\in A}{\max} \; Q(s^\prime, a^\prime)\\[0.5em]
@@ -1075,9 +1141,9 @@
     \footnote{\tiny Littman, M. L. ``Markov games as a framework for multi-agent reinforcement learning.'' 1994}
     extended Q-learning algorithm to zero-sum stochastic games
     \item Main idea is to modify $Q$-function to consider actions of opponent
-    $$Q_{i,t+1}(s_t, a_t) = (1 - \alpha_t)Q_{i,t}(s_t, a_t) + \alpha_t\left(r_i(s_t,a_t) + \delta V_{i,t}(s_{t+1})\right)$$
+    \[Q_{i,t+1}(s_t, a_t) = (1 - \alpha_t)Q_{i,t}(s_t, a_t) + \alpha_t\left(r_i(s_t,a_t) + \delta V_{i,t}(s_{t+1})\right)\]
     \item Since game is zero sum, we can have
-    $$V_{i,t}(s) = \underset{\pi_i}{\max} \; \underset{a_{-i}}{\min}\; Q_{i,t}(s,\pi_i,a_{-i})$$
+    \[V_{i,t}(s) = \underset{\pi_i}{\max} \; \underset{a_{-i}}{\min}\; Q_{i,t}(s,\pi_i,a_{-i})\]
    \end{itemize}
   \end{frame}
   
@@ -1129,7 +1195,7 @@
     \item $\pi_i: S \mapsto \Delta(A_i)$ denotes (mixed) strategy of agent $i$ at state s 
     \item $\pi = (\pi_1,\dots,\pi_n)$ denotes strategy profile of all agents
     \item \alert{Expected utility (value) function} of agent $i$ is
-    $$v_i(s,\pi) \defeq \E_{a_k\sim \pi(s_k)}\left[\sum_{k=0}^{\infty}\delta^k r_i(s_k,a_k)\given s_0 = s\right]$$
+    \[v_i(s,\pi) \defeq \E_{a_k\sim \pi(s_k)}\left[\sum_{k=0}^{\infty}\delta^k r_i(s_k,a_k)\given s_0 = s\right]\]
    \end{itemize}
   \end{frame}
   
@@ -1137,11 +1203,11 @@
   \begin{frame}{Equilibrium Characterization}
    \begin{itemize}[<+->]
     \item Equilibrium \alert{value function} is defined using \alert{one-stage deviation} principle (\alert{multi-agent} extension of \alert{Bellman's equation}) as
-    $$v_i(s,\pi^*) = \underset{\pi_i}{\max}\;\E_{a\sim (\pi_i,\pi_{-i}^*(s))}\left[r_i(s, a) + \delta \sum_{s^\prime\in S}p(s, a, s^\prime) v_i(s^\prime, \pi^*)\right]$$
+    \[v_i(s,\pi^*) = \underset{\pi_i}{\max}\;\E_{a\sim (\pi_i,\pi_{-i}^*(s))}\left[r_i(s, a) + \delta \sum_{s^\prime\in S}p(s, a, s^\prime) v_i(s^\prime, \pi^*)\right]\]
     \item \alert{Q-function} is defined as
-    $$Q_i(s,a,\pi^*) = r_i(s, a) + \delta \sum_{s^\prime\in S}p(s, a, s^\prime) v_i(s^\prime, \pi^*)$$
+    \[Q_i(s,a,\pi^*) = r_i(s, a) + \delta \sum_{s^\prime\in S}p(s, a, s^\prime) v_i(s^\prime, \pi^*)\]
     \item Recursion is then defined as
-    $$v_i(s, \pi^*) = \underset{\pi_i}{\max}\;\E_{a\sim (\pi_i,\pi_{-i}^*(s))}\left[Q_i(s,a,\pi^*)\right]$$
+    \[v_i(s, \pi^*) = \underset{\pi_i}{\max}\;\E_{a\sim (\pi_i,\pi_{-i}^*(s))}\left[Q_i(s,a,\pi^*)\right]\]
    \end{itemize}
   \end{frame}
   
@@ -1161,12 +1227,12 @@
   \begin{frame}{FP for Model-based Learning: Model}
    \begin{itemize}[<+->]\small
     \item At time $t$, $i$'s belief on $-i$'s strategy is $\mu^t_{i}$ and on own Q-function is
-    $$Q_i^t \defeq \E_{a_{-i}\sim \mu_{i}^t(s)}[Q_i^t(s,a_i,a_{-i})]$$
+    \[Q_i^t \defeq \E_{a_{-i}\sim \mu_{i}^t(s)}[Q_i^t(s,a_i,a_{-i})]\]
     \item Agent $i$ selects best response $a^t_i(s) \in \argmax_{a_i} Q_i^t(s,a_i,\mu_{i}^t(s))$
     \item Agent $i$ updates $\mu_i$ as 
-    $$\mu_i^{t+1}(s) = (1-\alpha_t)\mu_i^t(s) + \alpha_t a_{-i}^t(s)$$
+    \[\mu_i^{t+1}(s) = (1-\alpha_t)\mu_i^t(s) + \alpha_t a_{-i}^t(s)\]
     \item Agent $i$ updates $Q_i$ as
-    $$Q_i^{t+1}(s,a) = (1-\beta_t)Q_i^t(s,a)+\beta_t\left(r_i(s, a) + \delta \sum_{s^\prime\in S}p(s, a, s^\prime) v_i^t(s^\prime)\right)$$
+    \[Q_i^{t+1}(s,a) = (1-\beta_t)Q_i^t(s,a)+\beta_t\left(r_i(s, a) + \delta \sum_{s^\prime\in S}p(s, a, s^\prime) v_i^t(s^\prime)\right)\]
     where $v_i^t(s^\prime) = \max_{a_i}Q_i^t(s^\prime,a_i,	\mu_i^t(s))$
    \end{itemize}
   \end{frame}
